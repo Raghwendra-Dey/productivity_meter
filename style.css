@@ -1,4 +1,3 @@
-
 #timer {
   width: 460px;
   font-size: 70px;
@@ -13,6 +12,7 @@
   color: limegreen;
   font-size: 12px;
 }
+
 #hh {margin-left: 45px;}
 #mm {margin-left: 80px;}
 #ss {margin-left: 70px;}
