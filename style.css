@@ -1,0 +1,86 @@
+
+#timer {
+  width: 460px;
+  font-size: 70px;
+  background-color: black;
+  color: limegreen;
+  padding: 25px;
+  border-radius: 10px;
+}
+#labels {
+  margin-top: -25px;
+  z-index: 2;
+  color: limegreen;
+  font-size: 12px;
+}
+#hh {margin-left: 45px;}
+#mm {margin-left: 80px;}
+#ss {margin-left: 70px;}
+#ms {margin-left: 45px;}
+
+#controls {
+  margin-left:150px;
+  margin-top: 30px;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  float: left;
+  margin-left: 25px;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.watch1
+{
+  display: inline-block;
+  width: 50%;
+}
+
+.watch2
+{
+  display: inline-block;
+  width: 40%;
+}
+
+.text
+{
+  color: #fff;
+  font-size: 25px;
+}
+
+#go    { background-color: limegreen; }
+
+
+#stop  { background-color: red;  display: none; }
+
+#clear { background-color: yellow; display: none;}
+
+#plus    { background-color: limegreen; }
+#minus  { background-color: red; }
+#prb_cntr {
+  width: 420px;
+  font-size: 40px;
+  background-color: black;
+  color: limegreen;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 400px;
+  padding-top: 50px;
+}
+#prb_count
+{
+  margin-top: 75px;
+  margin-left: 12px;
+}
+
+body, button {
+  font-family: 'Courier';
+}
+body{
+  background-color: #0000fa;
+}

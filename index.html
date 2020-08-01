@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Simple Stopwatch</title>
+		<link href="./style.css" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<div class="watches">
+			<div class='watch1'>
+				<p class="text">Time Devoted: </p>
+				<div id='timer'>00:00:00:00</div>
+				<div id='labels'>
+					<span id='hh'>Hours</span>
+					<span id='mm'>Minutes</span>
+					<span id='ss'>Seconds</span>
+					<span id='ms'>Centiseconds</span>
+				</div>
+
+				<div id='controls'>
+					<button onclick='startTimer(0)' id='go'>Go</button>
+					<button onclick='stopTimer(0)'  id='stop'>Stop</button>
+					<button onclick='clearTimer(0)' id='clear'>Clear</button>
+				</div>
+			</div>
+
+			<div class='watch2'>
+				<p class="text">Actual Time Used: </p>
+				<div id='timer'>00:00:00:00</div>
+				<div id='labels'>
+					<span id='hh'>Hours</span>
+					<span id='mm'>Minutes</span>
+					<span id='ss'>Seconds</span>
+					<span id='ms'>Centiseconds</span>
+				</div>
+
+				<div id='controls'>
+					<button onclick='startTimer(1)' id='go'>Go</button>
+					<button onclick='stopTimer(1)'  id='stop'>Stop</button>
+					<button onclick='clearTimer(1)' id='clear'>Clear</button>
+				</div>
+			</div>
+		</div>
+
+		<br>
+
+		<div id='prb_cntr'>
+			<button onclick="prb_minus()" id='minus'>-1</button>
+			<button onclick="prb_plus()" id='plus'>+1</button>
+			<button onclick="rst()">Reset</button>
+			<p id="prb_count">Problems Count: 0</p>
+		</div>
+
+		<script src="./script.js"></script>
+
+	</body>
+</html>
