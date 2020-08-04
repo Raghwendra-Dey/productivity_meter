@@ -7,8 +7,8 @@ Use it [here](https://raghwendra-dey.github.io/productivity_meter/).<br>
 ## Usage:
 > This App helped me a lot in my studies to keep track of my time wastage and making me aware of the real scenario of actual time utilization.<br>
 
-Start the `Time Devoted:` timer once you start studying, and let it run for all the time you think you are in continous studying mode. Obviously stop it when you are going for eating or anything else.<br>
-Start the `Actual Time Used:` timer in the same time when the `Time Devoted:` timer, but regularly stop this timer whenever you go for even a small break like gossiping with your friends on phone, hopped on to facebook to check whats going on, etc, etc. Stop it even if its only 10 sec long break.<br>
+Start the `Time Devoted:` timer once you start studying, and let it run for all the time you think you are in continous studying mode. Obviously stop it when you are going for eating or any other long breaks. Since the `Time Devoted:` timer is linked with the `Actual Time Used:` timer so it would automatically switch on the `Actual Time Used:` timer(Don't confuse it with the vice-versa, the first timer enforces its actions on the second not the second timer on the first).<br>
+Now, regularly stop the `Actual Time Used:` timer whenever you go for even a small break like gossiping with your friends on phone, hopped on to facebook to check what's going on, checking messages, etc, etc. **Stop it even if its only 10 sec long break.**<br>
 <br>
 NOTE: It is recommended to use this in laptops only. This project is not made responsive so, could not expect to give a good experience while using in mobile phones. If you wish to make it responsive then do shoot me a PR.<br><br>
 Thanks to [this](https://github.com/nelsonic/stopwatch) repo, which i used as the baseline and modified upon to serve my required purpose.
