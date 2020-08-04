@@ -19,10 +19,10 @@
 					<span id='ss'>Seconds</span>
 					<span id='ms'>Centiseconds</span>
 				</div>
-
+				<!-- Adding the binding between timer one and two without changing the funcationallity of two! -->
 				<div id='controls'>
-					<button onclick='startTimer(0)' id='go'>Go</button>
-					<button onclick='stopTimer(0)'  id='stop'>Stop</button>
+					<button onclick='startTimer(0), startTimer(1)' id='go'>Go</button>
+					<button onclick='stopTimer(0), stopTimer(1)'  id='stop'>Stop</button>
 					<button onclick='clearTimer(0)' id='clear'>Clear</button>
 				</div>
 			</div>
