@@ -1,6 +1,6 @@
 # productivity_meter
 [![Gitter](https://badges.gitter.im/productivity_meter/community.svg)](https://gitter.im/productivity_meter/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) </br>
-Productivity meter for measuring productivity of solving problems.<br>
+Productivity meter helps in measuring productivity of solving problems.<br>
 This can be used for tracking how much time you are thinking you spend in problem solving and how much time you actually spend solving problems.<br>
 Use it [here](https://raghwendra-dey.github.io/productivity_meter/).<br>
 ## App in Action:
