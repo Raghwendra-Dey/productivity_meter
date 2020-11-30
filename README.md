@@ -2,6 +2,7 @@
 [![Gitter](https://badges.gitter.im/productivity_meter/community.svg)](https://gitter.im/productivity_meter/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) </br>
 Productivity meter helps in measuring productivity of solving problems.<br>
 This is used for tracking how much time you are thinking you spend in problem solving and how much time you actually spend solving problems.<br>
+This does so by measuring the delta between the time spent minus the time wasted due to small small distractions. It uses two timers to do so.</br>
 Use it [here](https://raghwendra-dey.github.io/productivity_meter/).<br>
 ## App in Action:
 ![App in Action](https://user-images.githubusercontent.com/45457947/89179149-c6864180-d5ac-11ea-9efa-7b2a516a3a07.png)
