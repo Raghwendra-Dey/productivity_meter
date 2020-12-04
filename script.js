@@ -69,7 +69,7 @@ function updateDifference() {
   miliseconds=0, seconds='00',
   time = '';
 
-  var difference = (T[1].difference-T[0].difference); //Stores time difference between two watches
+  var difference = (T[0].difference-T[1].difference); //Stores time difference between two watches
 
   if(difference < 10){
     miliseconds = '0'+String(miliseconds);
@@ -155,6 +155,7 @@ function clearTimer(id) {
   clearInterval(T[id].timerInterval);
   T[id].timerDiv.innerHTML = "00:00:00:00"; // reset timer to all zeros
   T[id].difference = 0;
+  updateDifference();
 
   document.querySelectorAll('.watch'+String(id+1)+' #stop')[0].style.display="none";
   document.querySelectorAll('.watch'+String(id+1)+' #go')[0].style.display="inline";
