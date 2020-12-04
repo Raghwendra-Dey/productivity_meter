@@ -34,14 +34,27 @@ button {
   box-shadow: 5px 5px 5px #888888;
 }
 
+.watches
+{
+  text-align: center;
+}
 .watch1
 {
+  text-align: left;
   display: inline-block;
   width: 50%;
 }
 
 .watch2
 {
+  text-align: left;
+  display: inline-block;
+  width: 40%;
+}
+
+.watch3
+{
+  text-align: left;
   display: inline-block;
   width: 40%;
 }
