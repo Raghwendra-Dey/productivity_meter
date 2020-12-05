@@ -38,7 +38,8 @@
 				</div>
 
 				<div id='controls'>
-					<button onclick='startTimer(1)' id='go'>Go</button>
+					<!-- JS If statement is for checking if first timer is running or not -->
+					<button onclick='if(T[0].timerInterval != 0) {startTimer(1)}' id='go'>Go</button>
 					<button onclick='stopTimer(1)'  id='stop'>Stop</button>
 					<button onclick='clearTimer(1)' id='clear'>Clear</button>
 				</div>
