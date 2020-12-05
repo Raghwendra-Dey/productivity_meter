@@ -1,5 +1,5 @@
 # productivity_meter
-[![Gitter](https://badges.gitter.im/productivity_meter/community.svg)](https://gitter.im/productivity_meter/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) </br>
+[![Gitter](https://badges.gitter.im/productivity_meter/community.svg)](https://gitter.im/productivity_meter/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Join the chat at https://gitter.im/productivity_meter/UI_works](https://badges.gitter.im/productivity_meter/UI_works.svg)](https://gitter.im/productivity_meter/UI_works?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) </br>
 Productivity meter helps in measuring productivity of solving problems.<br>
 This is used for tracking how much time you are thinking you spend in problem solving and how much time you actually spend solving problems.<br>
 This does so by measuring the delta between the time spent minus the time wasted due to small small distractions. It uses two timers to do so.</br>
