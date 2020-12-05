@@ -1,9 +1,14 @@
 // timer part
 // global object
+
+// Initialising the required variables
 T = [{}, {}] ;
 T[0].timerDiv = document.querySelectorAll('.watch1 #timer')[0];
 T[1].timerDiv = document.querySelectorAll('.watch2 #timer')[0];
 DiffWatch = document.querySelectorAll('.watch3 #timer')[0];
+
+// Indicating that the timers are stopped ==> timerInterval is 0
+T[0].timerInterval = T[1].timerInterval = 0
 
 function displayTimer(id) {
   // initilized all local variables:
@@ -144,7 +149,9 @@ function startTimer(id) {
 }
 
 function stopTimer(id) {
+
   clearInterval(T[id].timerInterval); // stop updating the timer
+  T[id].timerInterval = 0; // Again indicating that the timer is stopped
 
   document.querySelectorAll('.watch'+String(id+1)+' #stop')[0].style.display="none";
   document.querySelectorAll('.watch'+String(id+1)+' #go')[0].style.display="inline";
