@@ -126,6 +126,13 @@ function updateDifference() {
 
 function startTimer(id) {
 
+  // Do not start the timer only when it is already running
+  // Else it make re-assignment to the variable timerInterval and makes the
+  // Previous interval unavailable; to clear it later
+  if( watchRunning[id] == 1 ){
+    return
+  }
+
   // Do not start second timer when the first one is stopped
   if( id == 1 && watchRunning[0] == 0 ){
     return
