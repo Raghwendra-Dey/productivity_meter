@@ -126,7 +126,8 @@ function updateDifference() {
 
 function startTimer(id) {
 
-  if( id == 1 && watchRunning[0] == 0){
+  // Do not start second timer when the first one is stopped
+  if( id == 1 && watchRunning[0] == 0 ){
     return
   } 
 
