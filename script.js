@@ -125,6 +125,12 @@ function updateDifference() {
 
 
 function startTimer(id) {
+
+  // Do not start second timer when the first one is stopped
+  if( id == 1 && watchRunning[0] == 0 ){
+    return
+  } 
+
   // save start time
   T[id].timerStarted = new Date().getTime()
   console.log('T['+String(id)+'].timerStarted: '+T[id].timerStarted)
