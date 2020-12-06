@@ -4,6 +4,7 @@ T = [{}, {}] ;
 T[0].timerDiv = document.querySelectorAll('.watch1 #timer')[0];
 T[1].timerDiv = document.querySelectorAll('.watch2 #timer')[0];
 DiffWatch = document.querySelectorAll('.watch3 #timer')[0];
+watchRunning = [0, 0];
 
 function displayTimer(id) {
   // initilized all local variables:
@@ -127,6 +128,7 @@ function startTimer(id) {
   // save start time
   T[id].timerStarted = new Date().getTime()
   console.log('T['+String(id)+'].timerStarted: '+T[id].timerStarted)
+  watchRunning[id]=1;
 
   if (T[id].difference > 0) {
     T[id].timerStarted = T[id].timerStarted - T[id].difference
@@ -134,7 +136,10 @@ function startTimer(id) {
   // update timer periodically
   T[id].timerInterval = setInterval(function() {
     displayTimer(id);
-    updateDifference();
+
+    //Update Difference Watch only when exactly one Timer is running
+    if(watchRunning[0]^watchRunning[1] === 1) //XOR will be 1 only when exactly one watch is running
+      updateDifference();
   }, 10);
 
   // show / hide the relevant buttons:
@@ -145,6 +150,7 @@ function startTimer(id) {
 
 function stopTimer(id) {
   clearInterval(T[id].timerInterval); // stop updating the timer
+  watchRunning[id] = 0;
 
   document.querySelectorAll('.watch'+String(id+1)+' #stop')[0].style.display="none";
   document.querySelectorAll('.watch'+String(id+1)+' #go')[0].style.display="inline";
