@@ -65,6 +65,11 @@ button {
   font-size: 25px;
 }
 
+.textbox
+{
+  font-size: 18px;
+}
+
 #go    { background-color: limegreen; }
 
 
@@ -74,6 +79,20 @@ button {
 
 #plus    { background-color: limegreen; }
 #minus  { background-color: red; }
+
+#todo_container {
+  width: 820px;
+  height: 300px;
+  font-size: 40px;
+  background-color: black;
+  color: limegreen;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 200px;
+  padding-top: 5px;
+}
+
 #prb_cntr {
   width: 420px;
   font-size: 40px;
