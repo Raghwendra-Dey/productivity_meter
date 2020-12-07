@@ -58,6 +58,16 @@
 
 		<br>
 
+		<div id='todo_container'>
+			<p class="="text">ToDo</p>
+			<hr>
+			<div id="todo_list" style="overflow-y: scroll;">
+
+			</div>
+			<input type="text" placeholder="Task name" id='taskName' class="textbox"/>
+			<input type="button" value="+ Add" id='plus' onclick="addTask()"/>
+		</div>
+
 		<div id='prb_cntr'>
 			<button onclick="prb_minus()" id='minus'>-1</button>
 			<button onclick="prb_plus()" id='plus'>+1</button>
@@ -66,6 +76,7 @@
 		</div>
 
 		<script src="./script.js"></script>
+		<script src="./todo_script.js"></script>
 
 	</body>
 </html>
