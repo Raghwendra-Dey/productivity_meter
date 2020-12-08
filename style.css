@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 #timer {
-  width: 460px;
+  width: 500px;
   font-size: 70px;
   background-color: black;
   color: limegreen;
@@ -36,13 +36,7 @@ body {
 }
 
 button {
-  width: 100px;
-  height: 40px;
-  float: left;
-  margin-left: 25px;
-  font-size: 25px;
-  font-weight: bold;
-  border-radius: 10px;
+
   box-shadow: 5px 5px 5px #888888;
 }
 
