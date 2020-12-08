@@ -93,8 +93,8 @@
 						class="fa fa-window-restore" aria-hidden="true"></i></button>
 			</div>
 		</div>
-
-		<div class='watch3'>
+    
+    <div class='watch3'>
 			<p class="text">Time Difference: </p>
 			<div id='timer'>00:00:00:00</div>
 			<div id='labels'>
@@ -104,7 +104,14 @@
 				<span id='ms'>Centiseconds</span>
 			</div>
 		</div>
-	</div>
+
+		<div id='todo_container'>
+			<p class="="text">ToDo</p>
+			<hr>
+			<div id="todo_list" style="overflow-y: scroll; height: 200px;">
+			</div>
+			<input type="button" value="+ Add" id='plus' onclick="addTask()"/>
+		</div>
 
 	<br>
 
@@ -130,6 +137,9 @@
   
 	<!--Internal Script.js-->
 	<script src="./script.js"></script>
+
+  <!--Script for todolist functions-->
+	<script src="./todo_script.js"></script>
 
 	<!-- jQuery and Bootstrap Bundle (includes Popper) -->
 	<!-- Bootstrap script -->
