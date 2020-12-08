@@ -19,7 +19,7 @@ function addTask() {  // This function is called when Add button in todo list is
     doneCheck.setAttribute('type','checkbox');
     doneCheck.setAttribute('id','doneCheck'+String(i));
     doneCheck.addEventListener('change',function () {
-        doneTask(newTask);
+        doneTask(taskName);
     });
     
     //Create a delete button and call deleteTask() when clicked
@@ -39,10 +39,13 @@ function addTask() {  // This function is called when Add button in todo list is
     i++;
 }
 
-function doneTask(element) {
+function doneTask(elementTask) {
     // Strike through the task name and disable its controls
+    elementTask.style.textDecoration = "line-through";
 }
 
-function deleteTask(element) {
+function deleteTask(elementTask) {
     //Removes element from its parent
+    const task = document.getElementById(elementTask.id);
+    todo_list.removeChild(task);
 }
