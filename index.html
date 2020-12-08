@@ -1,71 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Productivity Meter</title>
+    <link href="./style.css" rel="stylesheet" />
+  </head>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>Productivity Meter</title>
-		<link href="./style.css" rel="stylesheet">
-	</head>
+  <body>
+    <div class="watches">
+      <div class="watch1">
+        <p class="text">Time Devoted:</p>
+        <div id="timer">00:00:00:00</div>
+        <div id="labels">
+          <span id="hh">Hours</span>
+          <span id="mm">Minutes</span>
+          <span id="ss">Seconds</span>
+          <span id="ms">Centiseconds</span>
+        </div>
+        <!-- Adding the binding between timer one and two without changing the funcationallity of two! -->
+        <div id="controls">
+          <button onclick="startTimer(0), startTimer(1)" id="go">Go</button>
+          <button onclick="stopTimer(0), stopTimer(1)" id="stop">Stop</button>
+          <button onclick="clearTimer(0)" id="clear">Clear</button>
+        </div>
+      </div>
 
-	<body>
+      <div class="watch2">
+        <p class="text">Actual Time Used:</p>
+        <div id="timer">00:00:00:00</div>
+        <div id="labels">
+          <span id="hh">Hours</span>
+          <span id="mm">Minutes</span>
+          <span id="ss">Seconds</span>
+          <span id="ms">Centiseconds</span>
+        </div>
 
-		<div class="watches">
-			<div class='watch1'>
-				<p class="text">Time Devoted: </p>
-				<div id='timer'>00:00:00:00</div>
-				<div id='labels'>
-					<span id='hh'>Hours</span>
-					<span id='mm'>Minutes</span>
-					<span id='ss'>Seconds</span>
-					<span id='ms'>Centiseconds</span>
-				</div>
-				<!-- Adding the binding between timer one and two without changing the funcationallity of two! -->
-				<div id='controls'>
-					<button onclick='startTimer(0), startTimer(1)' id='go'>Go</button>
-					<button onclick='stopTimer(0), stopTimer(1)'  id='stop'>Stop</button>
-					<button onclick='clearTimer(0)' id='clear'>Clear</button>
-				</div>
-			</div>
+        <div id="controls">
+          <button onclick="startTimer(1)" id="go">Go</button>
+          <button onclick="stopTimer(1)" id="stop">Stop</button>
+          <button onclick="clearTimer(1)" id="clear">Clear</button>
+        </div>
+      </div>
 
-			<div class='watch2'>
-				<p class="text">Actual Time Used: </p>
-				<div id='timer'>00:00:00:00</div>
-				<div id='labels'>
-					<span id='hh'>Hours</span>
-					<span id='mm'>Minutes</span>
-					<span id='ss'>Seconds</span>
-					<span id='ms'>Centiseconds</span>
-				</div>
+      <div class="watch3">
+        <p class="text">Time Difference:</p>
+        <div id="timer">00:00:00:00</div>
+        <div id="labels">
+          <span id="hh">Hours</span>
+          <span id="mm">Minutes</span>
+          <span id="ss">Seconds</span>
+          <span id="ms">Centiseconds</span>
+        </div>
+      </div>
+    </div>
 
-				<div id='controls'>
-					<button onclick='startTimer(1)' id='go'>Go</button>
-					<button onclick='stopTimer(1)'  id='stop'>Stop</button>
-					<button onclick='clearTimer(1)' id='clear'>Clear</button>
-				</div>
-			</div>
+    <br />
 
-			<div class='watch3'>
-				<p class="text">Time Difference: </p>
-				<div id='timer'>00:00:00:00</div>
-				<div id='labels'>
-					<span id='hh'>Hours</span>
-					<span id='mm'>Minutes</span>
-					<span id='ss'>Seconds</span>
-					<span id='ms'>Centiseconds</span>
-				</div>
-			</div>
-		</div>
+    <div id="prb_cntr">
+      <button onclick="prb_minus()" id="minus">-1</button>
+      <button onclick="prb_plus()" id="plus">+1</button>
+      <button onclick="rst()">Reset</button>
+      <p id="prb_count">Problems Count: 0</p>
+    </div>
+    <footer id="footer">
+      <div>
+        <p>MADE WITH <span id="love-icon">❤</span></p>
+        <a
+          href="https://github.com/Raghwendra-Dey/productivity_meter/blob/master/README.md#usage"
+          >How to use??</a
+        >
+      </div>
+    </footer>
 
-		<br>
-
-		<div id='prb_cntr'>
-			<button onclick="prb_minus()" id='minus'>-1</button>
-			<button onclick="prb_plus()" id='plus'>+1</button>
-			<button onclick="rst()">Reset</button>
-			<p id="prb_count">Problems Count: 0</p>
-		</div>
-
-		<script src="./script.js"></script>
-
-	</body>
+    <script src="./script.js"></script>
+  </body>
 </html>

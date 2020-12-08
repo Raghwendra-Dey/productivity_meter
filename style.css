@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 #timer {
   width: 460px;
   font-size: 70px;
@@ -13,13 +17,21 @@
   font-size: 12px;
 }
 
-#hh {margin-left: 45px;}
-#mm {margin-left: 80px;}
-#ss {margin-left: 70px;}
-#ms {margin-left: 45px;}
+#hh {
+  margin-left: 45px;
+}
+#mm {
+  margin-left: 80px;
+}
+#ss {
+  margin-left: 70px;
+}
+#ms {
+  margin-left: 45px;
+}
 
 #controls {
-  margin-left:150px;
+  margin-left: 150px;
   margin-top: 30px;
 }
 
@@ -34,46 +46,52 @@ button {
   box-shadow: 5px 5px 5px #888888;
 }
 
-.watches
-{
+.watches {
   text-align: center;
 }
-.watch1
-{
+.watch1 {
   text-align: left;
   display: inline-block;
   width: 50%;
 }
 
-.watch2
-{
+.watch2 {
   text-align: left;
   display: inline-block;
   width: 40%;
 }
 
-.watch3
-{
+.watch3 {
   text-align: left;
   display: inline-block;
   width: 40%;
 }
 
-.text
-{
+.text {
   color: #fff;
   font-size: 25px;
 }
 
-#go    { background-color: limegreen; }
+#go {
+  background-color: limegreen;
+}
 
+#stop {
+  background-color: red;
+  display: none;
+}
 
-#stop  { background-color: red;  display: none; }
+#clear {
+  background-color: yellow;
+  display: none;
+}
 
-#clear { background-color: yellow; display: none;}
-
-#plus    { background-color: limegreen; }
-#minus  { background-color: red; }
+#plus {
+  background-color: limegreen;
+}
+#minus {
+  background-color: red;
+}
 #prb_cntr {
   width: 420px;
   font-size: 40px;
@@ -85,15 +103,38 @@ button {
   margin-left: 400px;
   padding-top: 50px;
 }
-#prb_count
-{
+#prb_count {
   margin-top: 75px;
   margin-left: 12px;
 }
 
-body, button {
-  font-family: 'Courier';
+body,
+button {
+  font-family: "Courier";
 }
-body{
+body {
   background-color: #0000fa;
+}
+#footer {
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.712);
+  width: 100vw;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  font-family: cursive;
+  letter-spacing: 3px;
+  font-size: large;
+}
+#footer a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  style: none;
+}
+#footer a:hover {
+  color: pink;
+}
+#love-icon {
+  color: red;
 }
