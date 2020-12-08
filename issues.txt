@@ -1,0 +1,1 @@
+1)When we clear first timer the second timer should also be cleareed right
