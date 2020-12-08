@@ -1,6 +1,10 @@
 body {
   margin: 0;
   padding: 0;
+  background: #2b2d34 url(cover-background.jpg) center;
+  background-size: cover;
+  width:100%;
+
 }
 #timer {
   width: 500px;
@@ -29,6 +33,37 @@ body {
 #ms {
   margin-left: 45px;
 }
+
+.cover {
+  /* background: #2b2d34 url(cover-background.jpg) center; */
+  /* background-size: cover; */
+  height: 10rem;
+  color: #fff;
+}
+
+
+/* Navigation Bar */
+.navbar {
+  padding: .5rem 10rem !important;
+}
+
+.navbar-trans{
+  background: transparent;
+}
+
+.navbar-brand {
+  display: inline-block;
+  /* padding: 0rem !important;
+  margin: 0rem !important; */
+  font-size: 2rem !important;
+
+}
+
+.nav-link:hover {
+  background-color: #00acfc;
+}
+
+
 
 #controls {
   margin-left: 150px;
@@ -124,11 +159,39 @@ body {
   text-decoration: none;
   cursor: pointer;
   color: #fff;
-  style: none;
 }
 #footer a:hover {
   color: pink;
 }
 #love-icon {
   color: red;
+}
+
+/* Typewriter */
+.typewriter {
+  border-right: solid 3px rgba(0,255,0,.75);
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'Source Code Pro', monospace;  
+  font-size: 28px;
+  color: rgba(255,255,255,.70);
+  margin: 0 auto;
+}
+
+/* Animation */
+.typewriter {
+  animation: animated-text 4s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) infinite;
+}
+
+/* text animation */
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 700px;}
+}
+
+/* cursor animations */
+@keyframes animated-cursor{
+  from{border-right-color: rgba(0,255,0,.75);}
+  to{border-right-color: transparent;}
 }
