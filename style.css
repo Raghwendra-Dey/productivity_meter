@@ -82,8 +82,9 @@ button {
 
 #todo_container {
   width: 820px;
-  height: 300px;
+  height: 400px;
   font-size: 40px;
+  overflow-y: auto;
   background-color: black;
   color: limegreen;
   padding: 25px;
