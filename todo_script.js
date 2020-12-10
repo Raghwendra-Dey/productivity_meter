@@ -10,7 +10,7 @@ function addTask() {  // This function is called when Add button in todo list is
 
     //To that container, add textbox showing name of task
     const taskName=document.createElement('input');
-    taskName.setAttribute('type','input');
+    taskName.setAttribute('type','text');
     taskName.setAttribute('placeholder','Enter TaskName');
     taskName.setAttribute('id','taskName'+String(i));
 
@@ -19,7 +19,12 @@ function addTask() {  // This function is called when Add button in todo list is
     doneCheck.setAttribute('type','checkbox');
     doneCheck.setAttribute('id','doneCheck'+String(i));
     doneCheck.addEventListener('change',function () {
-        doneTask(taskName);
+        if(doneCheck.checked){
+            doneTask(taskName);
+        }
+        else {
+            reviveTask(taskName);
+        }
     });
     
     //Create a delete button and call deleteTask() when clicked
@@ -41,7 +46,15 @@ function addTask() {  // This function is called when Add button in todo list is
 
 function doneTask(elementTask) {
     // Strike through the task name and disable its controls
-    elementTask.style.textDecoration = "line-through";
+    if(elementTask.value){
+        elementTask.style.textDecoration = "line-through";
+        elementTask.readOnly = "true";
+    }
+}
+
+function reviveTask(elementTask) {
+    elementTask.style.textDecoration = "none";
+    elementTask.removeAttribute("readonly");
 }
 
 function deleteTask(elementTask) {
