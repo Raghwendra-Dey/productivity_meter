@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #2b2d34 url(cover-background.jpg) center;
+  background: #2b2d34 url(assets/cover-background.jpg) center;
   background-size: cover;
   width:100%;
 
@@ -37,32 +37,34 @@ body {
 
 /* Navigation Bar */
 .navbar {
-  padding: .5rem 10rem !important;
-}
-
-.navbar-trans{
-  background: transparent;
+  padding: .5rem 3rem !important;
 }
 
 .navbar-brand {
   display: inline-block;
   padding: 0;
-  margin: 0s;
+  margin: 0;
   font-size: 2rem !important;
 
 }
 
 .nav-link {
-  font-size: 1.2rem;
   font-family: "Monserrat-Light";
   margin: 1rem 0.5rem;
 }
 
 .nav-link:hover {
-  background-color: #00acfc;
+  transform: translate(0) scale(1.2);
+  transform: translateY(-4px);  
 }
 
+.fa-github{
+  font-size: 2rem;
+}
 
+.fa-info-circle{
+  font-size: 2rem;
+}
 
 #controls {
   margin-left: 150px;
@@ -193,22 +195,22 @@ body {
   border-right: solid 3px rgba(0,255,0,.75);
   white-space: nowrap;
   overflow: hidden;    
-  font-family: 'Source Code Pro', monospace;  
-  font-size: 28px;
-  color: rgba(255,255,255,.70);
-  margin: 0 auto;
+  font-family: 'Fredericka the Great', cursive;  
+  font-size: 3rem;
+  color: rgba(241, 198, 58, 0.7);
+  margin: 2rem auto 3rem;
 }
 
 /* Animation */
 .typewriter {
-  animation: animated-text 4s steps(29,end) 1s 1 normal both,
-             animated-cursor 600ms steps(29,end) infinite;
+  animation: animated-text 4s steps(30,end) 1s 1 normal both,
+             animated-cursor 600ms steps(30,end) infinite;
 }
 
 /* text animation */
 @keyframes animated-text{
   from{width: 0;}
-  to{width: 700px;}
+  to{width: 40rem;}
 }
 
 /* cursor animations */
