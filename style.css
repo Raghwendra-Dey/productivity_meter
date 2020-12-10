@@ -75,7 +75,7 @@ button {
 #plus    { background-color: limegreen; }
 #minus  { background-color: red; }
 #prb_cntr {
-  width: 420px;
+  width: 500px; 
   font-size: 40px;
   background-color: black;
   color: limegreen;
