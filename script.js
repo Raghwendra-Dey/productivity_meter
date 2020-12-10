@@ -27,7 +27,7 @@ function displayTimer(id) {
   // seconds
   if(T[id].difference > 1000) {
     seconds = Math.floor(T[id].difference / 1000);
-    if (seconds >= 60) {
+    if (seconds >= 60) {   
       seconds = seconds % 60;
     }
     if(seconds < 10) {
@@ -38,7 +38,7 @@ function displayTimer(id) {
   // minutes
   if(T[id].difference > 60000) {
     minutes = Math.floor(T[id].difference/60000);
-    if (minutes > 60) {
+    if (minutes >= 60) {
       minutes = minutes % 60;
     }
     if(minutes < 10) {
@@ -98,7 +98,7 @@ function updateDifference() {
   // minutes
   if(difference > 60000) {
     minutes = Math.floor(difference/60000);
-    if (minutes > 60) {
+    if (minutes >= 60) {
       minutes = minutes % 60;
     }
     if(minutes < 10) {
@@ -127,6 +127,19 @@ function updateDifference() {
 
 
 function startTimer(id) {
+
+  // Do not start the timer only when it is already running
+  // Else it make re-assignment to the variable timerInterval and makes the
+  // Previous interval unavailable; to clear it later
+  if( watchRunning[id] == 1 ){
+    return
+  }
+
+  // Do not start second timer when the first one is stopped
+  if( id == 1 && watchRunning[0] == 0 ){
+    return
+  } 
+
   // save start time
   T[id].timerStarted = new Date().getTime()
   console.log('T['+String(id)+'].timerStarted: '+T[id].timerStarted)
