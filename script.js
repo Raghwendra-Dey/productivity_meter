@@ -197,15 +197,15 @@ function updateAverage(cnt){
   var minutes='00',seconds='00',time='';
   if(cnt==0){
     runningAverage=0;
-    document.getElementById('Average time').innerHTML="Average time/per problem(in minutes): 0";
+    document.getElementById('Average time').innerHTML="Average time/problem: 0";
   }
   else{
     timeNow = new Date().getTime();
-    difference =timeNow-T[2].timerStarted;  //Updating the runningAverage using "current_timestamp - previous timestamp(T[2].timerStarted)"
+    temp =timeNow-T[2].prevtime;  //Updating the runningAverage using "current_timestamp - previous timestamp(T[2].prevtime)"
     Totaltime = runningAverage * (cnt-1);   
-    Totaltime +=difference;
+    Totaltime +=temp;
     runningAverage = Totaltime/(cnt);
-    T[2].timerStarted =timeNow;
+    T[2].prevtime =timeNow;
     // seconds
     if(runningAverage > 1000) {
       seconds = Math.floor(runningAverage / 1000);
@@ -227,7 +227,7 @@ function updateAverage(cnt){
 
     time=minutes+':';
     time+=seconds;
-    document.getElementById('Average time').innerHTML="Average time/per problem(in minutes): "+time;
+    document.getElementById('Average time').innerHTML="Average time/problem: "+time+" min";
   }
 
 }
@@ -243,12 +243,12 @@ function prb_minus()
 function record()
 {
   if(!isrunningAverage){        //Averagetime counter is turned on we update previous timestamp,along with the difference from previous session"
-    T[2].timerStarted= new Date().getTime();
-    if(T[2].difference>0)T[2].timerStarted=T[2].timerStarted-T[2].difference;
+    T[2].prevtime= new Date().getTime();
+    if(T[2].delta>0)T[2].prevtime=T[2].prevtime-T[2].delta;
     document.getElementById('record').style.background='blue';    //Color introduced so user can realise that the timer is running
   }
   else{        //Average time counter turned off 
-    T[2].difference = new Date().getTime() - T[2].timerStarted;
+    T[2].delta = new Date().getTime() - T[2].prevtime;
     document.getElementById('record').style.background='white';
   }
   isrunningAverage ^= true;    //switching the bool variable to indicate whether timer is running or not
@@ -257,9 +257,9 @@ function record()
 function rst()
 {
   document.getElementById('prb_count').innerHTML="Problems Count: 0";
-  document.getElementById('Average time').innerHTML="Average time/per problem(in minutes): 0";
+  document.getElementById('Average time').innerHTML="Average time/problem: 0";
   isrunningAverage =false;
-  T[2].difference =0;
+  T[2].delta =0;
   runningAverage =0;
   document.getElementById('record').style.background='white';
 }
