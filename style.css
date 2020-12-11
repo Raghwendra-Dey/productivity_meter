@@ -1,6 +1,17 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(bg.jpg);
+  background-size: cover;
+}
+.font_teko{
+  font-family: 'Teko';
+} 
+.title{
+  letter-spacing: 10px;
+}
+.moto{
+  letter-spacing: 3px;
 }
 #timer {
   width: 500px;
@@ -155,7 +166,6 @@ body {
   text-decoration: none;
   cursor: pointer;
   color: #fff;
-  style: none;
 }
 #footer a:hover {
   color: pink;
