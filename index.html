@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
 	<!--Required Meta-->
 	<meta charset="UTF-8">
@@ -39,9 +39,8 @@
 					<i class="fa fa-flag" aria-hidden="true"></i></button>
 				<button type="button" class="btn btn-danger btn-lg" onclick='stopTimer(0), stopTimer(1)' id='stop'>Stop
 					<i class="fa fa-stop-circle" aria-hidden="true"></i></button>
-				<button type="button" class="btn btn-warning btn-lg" onclick='clearTimer(0), clearTimer(1)' id='clear'>Clear <i
-						class="fa fa-window-restore" aria-hidden="true"></i></button>
-
+				<button type="button" class="btn btn-warning btn-lg" onclick='clearTimer(0), clearTimer(1)'
+					id='clear'>Clear <i class="fa fa-window-restore" aria-hidden="true"></i></button>
 			</div>
 		</div>
 
@@ -64,8 +63,8 @@
 						class="fa fa-window-restore" aria-hidden="true"></i></button>
 			</div>
 		</div>
-    
-    <div class='watch3'>
+
+		<div class='watch3'>
 			<p class="text">Time Difference: </p>
 			<div id='timer'>00:00:00:00</div>
 			<div id='labels'>
@@ -75,16 +74,15 @@
 				<span id='ms'>Centiseconds</span>
 			</div>
 		</div>
+	</div>
 
-		<div id='todo_container'>
-			<p class="="text">ToDo</p>
-			<hr>
-			<div id="todo_list" style="overflow-y: scroll; height: 200px;">
-			</div>
-			<input type="button" value="+ Add" id='plus' onclick="addTask()"/>
+	<div id='todo_container'>
+		<p class="=">ToDo</p>
+		<hr>
+		<div id="todo_list" style="overflow-y: scroll; height: 200px;">
 		</div>
-
-	<br>
+		<input type="button" value="+ Add" id='plus' onclick="addTask()" />
+	</div>
 
 	<div id='prb_cntr'>
 		<button type="button" class="btn btn-danger btn-lg" onclick="prb_minus()" id='minus'>1 <i class="fa fa-minus"
@@ -96,29 +94,28 @@
 		<p id="prb_count">Problems Count: 0</p>
 	</div>
 
-    <footer id="footer">
-    <div>
-      <p>MADE WITH <span id="love-icon">❤</span></p>
-      <a
-        href="https://github.com/Raghwendra-Dey/productivity_meter/blob/master/README.md#usage"
-        >How to use??</a
-      >
-    </div>
-  </footer>
-  
+
+	<footer id="footer">
+		<div>
+			<p>MADE WITH <span id="love-icon">❤</span></p>
+			<a href="https://github.com/Raghwendra-Dey/productivity_meter/blob/master/README.md#usage">How to
+				use??</a>
+		</div>
+	</footer>
+
 	<!--Internal Script.js-->
 	<script src="./script.js"></script>
 
-  <!--Script for todolist functions-->
+	<!--Script for todolist functions-->
 	<script src="./todo_script.js"></script>
 
 	<!-- jQuery and Bootstrap Bundle (includes Popper) -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-	</script>
+		</script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-	</script>
+		</script>
 </body>
 
 </html>
