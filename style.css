@@ -94,11 +94,11 @@ button {
 }
 
 /* Buttons */
-button{
+button,  .input{
   transform: scale(0.9);
 }
 
-button:hover{
+button:hover, .input{
   transform: scale(1);
   opacity: 0.8;
 }
