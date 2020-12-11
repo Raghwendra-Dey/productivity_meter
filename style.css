@@ -93,6 +93,16 @@ button {
   background-color: red;
 }
 
+/* Buttons */
+button,  .input{
+  transform: scale(0.9);
+}
+
+button:hover, .input{
+  transform: scale(1);
+  opacity: 0.8;
+}
+
 #todo_container {
   width: 820px;
   height: 400px;
