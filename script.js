@@ -189,7 +189,8 @@ function prb_plus()
   var x = document.getElementById('prb_count').innerHTML.split(": ");
   var cnt=Number(x[x.length-1])+1;
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
-  updateAverage(cnt);        
+  if(isrunningAverage)
+  {updateAverage(cnt);}        
 }
 
 //updating average when plus or minus  button is pressed
@@ -197,7 +198,7 @@ function updateAverage(cnt){
   var minutes='00',seconds='00',time='';
   if(cnt==0){
     runningAverage=0;
-    document.getElementById('Average time').innerHTML="Average time/problem: 0";
+    document.getElementById('Average time').innerHTML="Average time/problem: 0 mins";
   }
   else{
     timeNow = new Date().getTime();
@@ -227,7 +228,7 @@ function updateAverage(cnt){
 
     time=minutes+':';
     time+=seconds;
-    document.getElementById('Average time').innerHTML="Average time/problem: "+time+" min";
+    document.getElementById('Average time').innerHTML="Average time/problem: "+time+" mins";
   }
 
 }
@@ -257,7 +258,7 @@ function record()
 function rst()
 {
   document.getElementById('prb_count').innerHTML="Problems Count: 0";
-  document.getElementById('Average time').innerHTML="Average time/problem: 0";
+  document.getElementById('Average time').innerHTML="Average time/problem: 0 mins";
   isrunningAverage =false;
   T[2].delta =0;
   runningAverage =0;
