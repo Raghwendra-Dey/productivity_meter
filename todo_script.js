@@ -19,7 +19,7 @@ function addTask() { // This function is called when Add button in todo list is 
     const doneCheck = document.createElement('input');
     doneCheck.setAttribute('type', 'checkbox');
     doneCheck.setAttribute('id', 'doneCheck' + String(i));
-    doneCheck.addEventListener('change', function() {
+    doneCheck.addEventListener('change', function () {
         if (doneCheck.checked) {
             doneTask(taskName);
         } else {
@@ -33,7 +33,7 @@ function addTask() { // This function is called when Add button in todo list is 
     deleteButton.setAttribute('type', 'button');
     deleteButton.setAttribute('value', 'X');
     deleteButton.setAttribute('id', 'deleteButton' + String(i));
-    deleteButton.addEventListener('click', function() {
+    deleteButton.addEventListener('click', function () {
         deleteTask(newTask);
     });
     deleteButton.id = "deleteButton";
