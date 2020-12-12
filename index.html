@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
 	<!--Required Meta-->
 	<meta charset="UTF-8">
@@ -23,39 +23,39 @@
 
 <body>
 
+	<!-- Watches Container -->
 	<div class="watches">
 		<div class='watch1'>
 			<p class="text">Time Devoted: </p>
-			<div id='timer'>00:00:00:00</div>
-			<div id='labels'>
-				<span id='hh'>Hours</span>
-				<span id='mm'>Minutes</span>
-				<span id='ss'>Seconds</span>
-				<span id='ms'>Centiseconds</span>
+			<div class='timer'>00:00:00:00</div>
+			<div class='labels'>
+				<span class='hh'>Hours</span>
+				<span class='mm'>Minutes</span>
+				<span class='ss'>Seconds</span>
+				<span class='cs'>Centiseconds</span>
 			</div>
 			<!-- Adding the binding between timer one and two without changing the funcationallity of two! -->
-			<div id='controls'>
+			<div class='controls'>
 				<button type="button" class="btn btn-success btn-lg" onclick='startTimer(0), startTimer(1)' id='go'> Go!
 					<i class="fa fa-flag" aria-hidden="true"></i></button>
 				<button type="button" class="btn btn-danger btn-lg" onclick='stopTimer(0), stopTimer(1)' id='stop'>Stop
 					<i class="fa fa-stop-circle" aria-hidden="true"></i></button>
-				<button type="button" class="btn btn-warning btn-lg" onclick='clearTimer(0), clearTimer(1)' id='clear'>Clear <i
-						class="fa fa-window-restore" aria-hidden="true"></i></button>
-
+				<button type="button" class="btn btn-warning btn-lg" onclick='clearTimer(0), clearTimer(1)'
+					id='clear'>Clear <i class="fa fa-window-restore" aria-hidden="true"></i></button>
 			</div>
 		</div>
 
 		<div class='watch2'>
 			<p class="text">Actual Time Used: </p>
-			<div id='timer'>00:00:00:00</div>
-			<div id='labels'>
-				<span id='hh'>Hours</span>
-				<span id='mm'>Minutes</span>
-				<span id='ss'>Seconds</span>
-				<span id='ms'>Centiseconds</span>
+			<div class='timer'>00:00:00:00</div>
+			<div class='labels'>
+				<span class='hh'>Hours</span>
+				<span class='mm'>Minutes</span>
+				<span class='ss'>Seconds</span>
+				<span class='cs'>Centiseconds</span>
 			</div>
 
-			<div id='controls'>
+			<div class='controls'>
 				<button type="button" class="btn btn-success btn-lg" onclick='startTimer(1)' id='go'> Go!
 					<i class="fa fa-flag" aria-hidden="true"></i></button>
 				<button type="button" class="btn btn-danger btn-lg" onclick='stopTimer(1)' id='stop'>Stop
@@ -64,29 +64,29 @@
 						class="fa fa-window-restore" aria-hidden="true"></i></button>
 			</div>
 		</div>
-    
-    <div class='watch3'>
+
+		<div class='watch3'>
 			<p class="text">Time Difference: </p>
-			<div id='timer'>00:00:00:00</div>
-			<div id='labels'>
-				<span id='hh'>Hours</span>
-				<span id='mm'>Minutes</span>
-				<span id='ss'>Seconds</span>
-				<span id='ms'>Centiseconds</span>
+			<div class='timer'>00:00:00:00</div>
+			<div class='labels'>
+				<span class='hh'>Hours</span>
+				<span class='mm'>Minutes</span>
+				<span class='ss'>Seconds</span>
+				<span class='cs'>Centiseconds</span>
 			</div>
 		</div>
+	</div>
 
-		<div id='todo_container'>
-			<p class="text">ToDo</p>
-			<hr>
-			<div id="todo_list" style="overflow-y: scroll; height: 200px;">
-			</div>
-			<button type="button" class="btn  btn-lg text-light "  onclick="addTask()" id='plus'><i class="fa fa-plus"
+	<!-- Todo List Container -->
+	<div id='todo_container' class="text-center">
+		<p class="text">ToDo</p>
+		<hr>
+		<div id="todo_list"></div>
+		<button type="button" class="btn  btn-lg text-light " onclick="addTask()" id='plus'><i class="fa fa-plus"
 				aria-hidden="true"></i> Add</button>
-		</div>
+	</div>
 
-	<br>
-
+	<!-- Problem Container -->
 	<div id='prb_cntr'>
 		<button type="button" class="btn btn-danger btn-lg" onclick="prb_minus()" id='minus'>1 <i class="fa fa-minus"
 				aria-hidden="true"></i></button>
@@ -97,29 +97,28 @@
 		<p id="prb_count">Problems Count: 0</p>
 	</div>
 
-    <footer id="footer">
-    <div>
-      <p>MADE WITH <span id="love-icon">❤</span></p>
-      <a
-        href="https://github.com/Raghwendra-Dey/productivity_meter/blob/master/README.md#usage"
-        >How to use??</a
-      >
-    </div>
-  </footer>
-  
+	<!-- Footer -->
+	<footer id="footer">
+		<div>
+			<p>MADE WITH <i class="fas fa-heart text-danger"></i></p>
+			<a href="https://github.com/Raghwendra-Dey/productivity_meter/blob/master/README.md#usage">How to
+				use??</a>
+		</div>
+	</footer>
+
 	<!--Internal Script.js-->
 	<script src="./script.js"></script>
 
-  <!--Script for todolist functions-->
+	<!--Script for todolist functions-->
 	<script src="./todo_script.js"></script>
 
 	<!-- jQuery and Bootstrap Bundle (includes Popper) -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-	</script>
+		</script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-	</script>
+		</script>
 </body>
 
 </html>

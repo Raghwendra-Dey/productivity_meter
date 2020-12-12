@@ -1,9 +1,9 @@
 // timer part
 // global object
 T = [{}, {}] ;
-T[0].timerDiv = document.querySelectorAll('.watch1 #timer')[0];
-T[1].timerDiv = document.querySelectorAll('.watch2 #timer')[0];
-DiffWatch = document.querySelectorAll('.watch3 #timer')[0];
+T[0].timerDiv = document.querySelector('.watch1 .timer');
+T[1].timerDiv = document.querySelector('.watch2 .timer');
+DiffWatch = document.querySelector('.watch3 .timer');
 watchRunning = [0, 0];
 
 function displayTimer(id) {
