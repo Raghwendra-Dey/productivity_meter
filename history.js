@@ -110,6 +110,7 @@ $(".selectionCtrls").hide();
 $(".recordTickBox").hide();
 $("#backDrop").hide();
 $("#confirmation").hide();
+$(".clickable").hide();
 
 // Event Handlers
 $(".toggler").click(function(){
@@ -127,19 +128,21 @@ $(".toggler").click(function(){
 // Entering Selection mode by clicking Select button
 $("#selection>button").click(function(){
     inSelectionMode = true;
-    $(".selectionCtrls").toggle();
-    $("#selection").toggle();
-    $(".recordTickBox").toggle();
+    $(".selectionCtrls").show();
+    $("#selection").hide();
+    $(".recordTickBox").show();
+    $(".clickable").show();
 })
 
 // Closing selection mode by clicking the close button
 $(".selectionCtrls>.close").click(function(){
     inSelectionMode = false;
-    $(".selectionCtrls").toggle();
-    $("#selection").toggle();
-    $(".recordTickBox").toggle();
+    $(".selectionCtrls").hide();
+    $("#selection").show();
+    $(".recordTickBox").hide();
     $(this).siblings("input.selectAll").prop( "checked", false );
     $(".recordTickBox").prop( "checked", false );
+    $(".clickable").hide();
 })
 
 // Select all checkbox Click event
@@ -184,6 +187,11 @@ $(".selectionCtrls>#delete").click(function(){
 		$(this).siblings("input.select_all").prop( "checked", false );
 		$(".recordTickBox").prop( "checked", false );
 		localStorage.setItem("records",JSON.stringify(records));
+		if(JSON.stringify(records) === "{}")
+			$("#records").text("\
+			No Records Found.\
+			Please make sure that you have used this app in this device before tracking for records.");
+		$(".clickable").hide();
 		$("#backDrop").hide();
 		$("#confirmation").hide();
 	})
@@ -198,3 +206,46 @@ $("#backDrop").click(function(){
     $("#backDrop").hide();
     $("#confirmation").hide();
 })
+
+$(".clickable").click(function(){
+    if(inSelectionMode){
+        let status = $(this).siblings(".recordDetails").find(".recordTickBox").prop( "checked");
+        $(this).siblings(".recordDetails").find(".recordTickBox").prop( "checked" , !status);  
+    }
+})
+
+// Long press detection
+// Set the duration of the long press and declare a couple variables
+var longpress = 500;
+var start;
+var divMouseDown;                       
+
+$(".record").on('mousedown', function(e){
+    // Get the time it was clicked
+    start = new Date().getTime();
+	element = this
+	
+    // See if mouse is still being held down after the longpress duration
+    divMouseDown = setTimeout(function(){
+        // What we want to happen when mouse is clicked and held for 1 second
+        inSelectionMode = true;
+        $(".selectionCtrls").show();
+        $("#selection").hide();
+        $("#delete").show();
+        $(".recordTickBox").show();
+        $(".clickable").show();
+        $(element).find(".recordTickBox").prop( "checked" , true);
+    }, longpress);
+    
+    // If the mouse leaves the element or is released before the long touch event, 
+    // reset variables and stop the function from triggering          
+    $(".record").on('mouseup mouseleave', function(){
+        if (divMouseDown) {
+            clearTimeout(divMouseDown);
+        }
+        start = 0;
+        e.stopPropagation();
+    } );
+    
+} );
+
