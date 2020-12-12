@@ -1,7 +1,12 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ac4ec4d0a7f0c3d88bf1111df75f6327fc888338
 .timer {
   width: 500px;
   font-size: 70px;
@@ -10,6 +15,10 @@ body {
   padding: 25px;
   border-radius: 10px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ac4ec4d0a7f0c3d88bf1111df75f6327fc888338
 .labels {
   margin-top: -25px;
   z-index: 2;
@@ -20,6 +29,7 @@ body {
 .hh {
   margin-left: 45px;
 }
+<<<<<<< HEAD
 .mm {
   margin-left: 80px;
 }
@@ -27,6 +37,18 @@ body {
   margin-left: 70px;
 }
 .ms {
+=======
+
+.mm {
+  margin-left: 80px;
+}
+
+.ss {
+  margin-left: 70px;
+}
+
+.cs {
+>>>>>>> ac4ec4d0a7f0c3d88bf1111df75f6327fc888338
   margin-left: 45px;
 }
 
@@ -36,13 +58,13 @@ body {
 }
 
 button {
-
   box-shadow: 5px 5px 5px #888888;
 }
 
 .watches {
   text-align: center;
 }
+
 .watch1 {
   text-align: left;
   display: inline-block;
@@ -93,18 +115,30 @@ button {
   background-color: red;
 }
 
+/* Buttons */
+button,  .input{
+  transform: scale(0.9);
+}
+
+button:hover, .input{
+  transform: scale(1);
+  opacity: 0.8;
+}
+
 #todo_container {
   width: 820px;
   height: 400px;
   font-size: 40px;
-  overflow-y: auto;
   background-color: black;
   color: limegreen;
-  padding: 25px;
+  padding: 10px 25px;
   border-radius: 10px;
-  margin-top: 50px;
-  margin-left: 200px;
-  padding-top: 5px;
+  margin: 50px auto;
+}
+
+#todo_list{
+  height: 200px;
+  overflow-y: auto;
 }
 
 #prb_cntr {
@@ -112,14 +146,14 @@ button {
   font-size: 40px;
   background-color: black;
   color: limegreen;
-  padding: 25px;
+  padding: 50px 20px ;
   border-radius: 10px;
-  margin-top: 50px;
-  margin-left: 400px;
-  padding-top: 50px;
+  margin: 50px auto;
+  text-align: center;
 }
 
 #prb_count {
+  /* text-align: center; */
   margin-top: 75px;
   margin-left: 12px;
 }
@@ -128,9 +162,11 @@ body,
 button {
   font-family: "Courier";
 }
+
 body {
   background-color: #0000fa;
 }
+
 #footer {
   text-align: center;
   color: #fff;
@@ -141,15 +177,13 @@ body {
   letter-spacing: 3px;
   font-size: large;
 }
+
 #footer a {
   text-decoration: none;
   cursor: pointer;
   color: #fff;
-  style: none;
 }
+
 #footer a:hover {
   color: pink;
-}
-#love-icon {
-  color: red;
 }

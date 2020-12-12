@@ -2,6 +2,7 @@
 // global object
 //There are three timers including the average time counter
 T = [{}, {},{}] ;
+
 T[0].timerDiv = document.querySelector('.watch1 .timer');
 T[1].timerDiv = document.querySelector('.watch2 .timer');
 DiffWatch = document.querySelector('.watch3 .timer');
