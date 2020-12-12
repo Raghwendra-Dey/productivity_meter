@@ -2,9 +2,9 @@
 // global object
 //There are three timers including the average time counter
 T = [{}, {},{}] ;
-T[0].timerDiv = document.querySelectorAll('.watch1 .timer');
-T[1].timerDiv = document.querySelectorAll('.watch2 .timer');
-DiffWatch = document.querySelectorAll('.watch3 .timer');
+T[0].timerDiv = document.querySelector('.watch1 .timer');
+T[1].timerDiv = document.querySelector('.watch2 .timer');
+DiffWatch = document.querySelector('.watch3 .timer');
 watchRunning = [0, 0];
 isrunningAverage = false;  //bool variable to indicate whether the average time counter is running or not
 runningAverage=0;  
