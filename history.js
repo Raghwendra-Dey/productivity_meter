@@ -102,7 +102,12 @@ for (const record_id in records){
 // Following is JQuery Code
 
 // Initialisation of looks
+
+let inSelectionMode = false;
+
 $(".tasksBlock").hide();
+$(".selectionCtrls").hide();
+$(".recordTickBox").hide();
 
 // Event Handlers
 $(".toggler").click(function(){
@@ -115,4 +120,52 @@ $(".toggler").click(function(){
 		
     pos = $(this).attr("pos")
     $(this).attr("pos", 1 - pos)
+})
+
+// Entering Selection mode by clicking Select button
+$("#selection>button").click(function(){
+    inSelectionMode = true;
+    $(".selectionCtrls").toggle();
+    $("#selection").toggle();
+    $(".recordTickBox").toggle();
+})
+
+// Closing selection mode by clicking the close button
+$(".selectionCtrls>.close").click(function(){
+    inSelectionMode = false;
+    $(".selectionCtrls").toggle();
+    $("#selection").toggle();
+    $(".recordTickBox").toggle();
+    $(this).siblings("input.selectAll").prop( "checked", false );
+    $(".recordTickBox").prop( "checked", false );
+})
+
+// Select all checkbox Click event
+$(".selectionCtrls>input.selectAll").click(function(){
+    $(".recordTickBox").prop( "checked", $(this).prop("checked") );
+})
+
+// Select all button click event
+$(".selectionCtrls>button.selectAll").click(function(){
+    $(this).siblings("input.selectAll").prop( "checked", true );
+    $(".recordTickBox").prop( "checked", true );
+})
+
+// delete event
+$(".selectionCtrls>#delete").click(function(){
+    $.each($(".recordTickBox"),function(i,value){
+        let checkStatus = $(value).prop("checked")
+        if(checkStatus){
+            let key = $(value).parents(".record").attr("unique_key")
+            $("#record"+key).remove();
+            delete records[key]
+        }
+    })
+    inSelectionMode = false;
+    $(".selectionCtrls").toggle();
+    $("#selection").toggle();
+    $(".recordTickBox").toggle();
+    $(this).siblings("input.select_all").prop( "checked", false );
+    $(".recordTickBox").prop( "checked", false );
+    localStorage.setItem("records",JSON.stringify(records));
 })
