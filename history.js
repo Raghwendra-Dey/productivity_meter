@@ -98,3 +98,21 @@ for (const record_id in records){
 
     count++;
 }
+
+// Following is JQuery Code
+
+// Initialisation of looks
+$(".tasksBlock").hide();
+
+// Event Handlers
+$(".toggler").click(function(){
+	$(this).parent().siblings(".tasksBlock").slideToggle(100);
+	
+    if($(this).attr("pos") == 0)
+    	$(this).css({'transform' : 'rotate('+ 180 +'deg)'});
+    else
+		$(this).css({'transform' : 'rotate('+ 0 +'deg)'});
+		
+    pos = $(this).attr("pos")
+    $(this).attr("pos", 1 - pos)
+})
