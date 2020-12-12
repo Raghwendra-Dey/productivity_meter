@@ -1,0 +1,34 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.record{
+    border: 2px solid black;
+    position: relative;
+    z-index : 1;
+    margin: 20px;
+    padding: 10px;
+}
+
+.record .recordName{
+    display: inline-block;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+.tasksBlock{
+    margin: 10px;
+}
+
+.task{
+    margin: 10px;
+}
+
+.taskName{
+    display: inline;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+        
+		<meta charset="UTF-8">
+        <title>Records | Productivity Meter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link href="./style.css" rel="stylesheet"> -->
+		<link href="./history.css" rel="stylesheet">
+		
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+        <div id="header">
+            <a href="./index.html">Index</a>
+        </div>
+        
+        <div id="records">
+            No Records Found. Please make sure that you have used tis app in this device before tracking for records.
+        </div>
+
+        <script type="text/html" id="recordTemplate">
+            <div class="record" id="record@record_id@" unique_key="@unique_key@">
+
+                <div class="recordDetails">
+                    <h2 class="recordName">@name@</h2>
+                    <div class="timesData">Date Saved: @record_time@ <br/>Time Devoted: @devoted_time@   <br/>Actual Time Used : @used_time@   <br/>Time Wasted : @wasted_time@ </div>
+                </div>
+
+                <div class="tasksBlock">
+                    Tasks analysis:
+                    <div class="tasks">
+                        Unable to find any tasks.
+                    </div>
+                </div>
+
+            </div>
+
+        </script>
+
+        <script type="text/html" id="taskTemplate">
+            <div class="task" id="task@record_id@_@task_enum@">
+                <input type="checkbox" disabled @completed@>
+                <div class="taskName">
+                    @task_enum@. @task_name@
+                </div>
+            </div>
+        </script>
+
+
+		<script src="./history.js"></script>
+
+	</body>
+	
+</html>
