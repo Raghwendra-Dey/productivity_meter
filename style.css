@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
 }
-#timer {
+.timer {
   width: 500px;
   font-size: 70px;
   background-color: black;
@@ -10,27 +10,27 @@ body {
   padding: 25px;
   border-radius: 10px;
 }
-#labels {
+.labels {
   margin-top: -25px;
   z-index: 2;
   color: limegreen;
   font-size: 12px;
 }
 
-#hh {
+.hh {
   margin-left: 45px;
 }
-#mm {
+.mm {
   margin-left: 80px;
 }
-#ss {
+.ss {
   margin-left: 70px;
 }
-#ms {
+.ms {
   margin-left: 45px;
 }
 
-#controls {
+.controls {
   margin-left: 150px;
   margin-top: 30px;
 }
