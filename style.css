@@ -132,14 +132,14 @@ button:hover, .input{
   font-size: 40px;
   background-color: black;
   color: limegreen;
-  padding: 25px;
+  padding: 50px 20px ;
   border-radius: 10px;
-  margin-top: 50px;
-  margin-left: 400px;
-  padding-top: 50px;
+  margin: 50px auto;
+  text-align: center;
 }
 
 #prb_count {
+  /* text-align: center; */
   margin-top: 75px;
   margin-left: 12px;
 }
