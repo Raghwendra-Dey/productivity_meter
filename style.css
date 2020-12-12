@@ -115,11 +115,9 @@ button:hover, .input{
   font-size: 40px;
   background-color: black;
   color: limegreen;
-  padding: 25px;
+  padding: 10px 25px;
   border-radius: 10px;
-  margin-top: 50px;
-  margin-left: 200px;
-  padding-top: 5px;
+  margin: 50px auto;
 }
 
 #todo_list{
