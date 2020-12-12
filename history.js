@@ -108,6 +108,8 @@ let inSelectionMode = false;
 $(".tasksBlock").hide();
 $(".selectionCtrls").hide();
 $(".recordTickBox").hide();
+$("#backDrop").hide();
+$("#confirmation").hide();
 
 // Event Handlers
 $(".toggler").click(function(){
@@ -153,19 +155,46 @@ $(".selectionCtrls>button.selectAll").click(function(){
 
 // delete event
 $(".selectionCtrls>#delete").click(function(){
-    $.each($(".recordTickBox"),function(i,value){
-        let checkStatus = $(value).prop("checked")
-        if(checkStatus){
-            let key = $(value).parents(".record").attr("unique_key")
-            $("#record"+key).remove();
-            delete records[key]
-        }
-    })
-    inSelectionMode = false;
-    $(".selectionCtrls").toggle();
-    $("#selection").toggle();
-    $(".recordTickBox").toggle();
-    $(this).siblings("input.select_all").prop( "checked", false );
-    $(".recordTickBox").prop( "checked", false );
-    localStorage.setItem("records",JSON.stringify(records));
+	
+	// Initialising the Confirmation Box
+    $("#confirmMatter").html("Are you sure want to delete?");
+    $("#confirmYes").html("Yes, Delete");
+    $("#confirmNo").html("No, Cancel");
+
+    $("#backDrop").show();
+	$("#confirmation").show();
+
+	// Removes any delegated click event
+	$("#confirmYes").unbind("click")
+
+	// Registers a new click event
+	$("#confirmYes").click(function(){
+		$.each($(".recordTickBox"),function(i,value){
+			let checkStatus = $(value).prop("checked")
+			if(checkStatus){
+				let key = $(value).parents(".record").attr("unique_key")
+				$("#record"+key).remove();
+				delete records[key]
+			}
+		})
+		inSelectionMode = false;
+		$(".selectionCtrls").toggle();
+		$("#selection").toggle();
+		$(".recordTickBox").toggle();
+		$(this).siblings("input.select_all").prop( "checked", false );
+		$(".recordTickBox").prop( "checked", false );
+		localStorage.setItem("records",JSON.stringify(records));
+		$("#backDrop").hide();
+		$("#confirmation").hide();
+	})
+	
+	$("#confirmNo").click(function(){
+		$("#backDrop").hide();
+		$("#confirmation").hide();
+	})
+})
+
+$("#backDrop").click(function(){
+    $("#backDrop").hide();
+    $("#confirmation").hide();
 })
