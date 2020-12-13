@@ -3,10 +3,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> ac4ec4d0a7f0c3d88bf1111df75f6327fc888338
 .timer {
   width: 500px;
   font-size: 70px;
@@ -15,10 +11,6 @@ body {
   padding: 25px;
   border-radius: 10px;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> ac4ec4d0a7f0c3d88bf1111df75f6327fc888338
 .labels {
   margin-top: -25px;
   z-index: 2;
@@ -29,15 +21,6 @@ body {
 .hh {
   margin-left: 45px;
 }
-<<<<<<< HEAD
-.mm {
-  margin-left: 80px;
-}
-.ss {
-  margin-left: 70px;
-}
-.ms {
-=======
 
 .mm {
   margin-left: 80px;
@@ -48,7 +31,6 @@ body {
 }
 
 .cs {
->>>>>>> ac4ec4d0a7f0c3d88bf1111df75f6327fc888338
   margin-left: 45px;
 }
 
