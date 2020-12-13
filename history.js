@@ -107,7 +107,7 @@ let inSelectionMode = false;
 
 $(".tasksBlock").hide();
 $(".selectionCtrls").hide();
-$(".recordTickBox").hide();
+$(".recordTickLabel").hide();
 $("#backDrop").hide();
 $("#confirmation").hide();
 $(".clickable").hide();
@@ -130,7 +130,7 @@ $("#selection>button").click(function(){
     inSelectionMode = true;
     $(".selectionCtrls").show();
     $("#selection").hide();
-    $(".recordTickBox").show();
+    $(".recordTickLabel").show();
     $(".clickable").show();
 })
 
@@ -139,7 +139,7 @@ $(".selectionCtrls>.close").click(function(){
     inSelectionMode = false;
     $(".selectionCtrls").hide();
     $("#selection").show();
-    $(".recordTickBox").hide();
+    $(".recordTickLabel").hide();
     $(this).siblings("input.selectAll").prop( "checked", false );
     $(".recordTickBox").prop( "checked", false );
     $(".clickable").hide();
@@ -183,7 +183,7 @@ $(".selectionCtrls>#delete").click(function(){
 		inSelectionMode = false;
 		$(".selectionCtrls").toggle();
 		$("#selection").toggle();
-		$(".recordTickBox").toggle();
+		$(".recordTickLabel").toggle();
 		$(this).siblings("input.select_all").prop( "checked", false );
 		$(".recordTickBox").prop( "checked", false );
 		localStorage.setItem("records",JSON.stringify(records));
@@ -232,7 +232,7 @@ $(".record").on('mousedown', function(e){
         $(".selectionCtrls").show();
         $("#selection").hide();
         $("#delete").show();
-        $(".recordTickBox").show();
+        $(".recordTickLabel").show();
         $(".clickable").show();
         $(element).find(".recordTickBox").prop( "checked" , true);
     }, longpress);

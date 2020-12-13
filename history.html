@@ -19,22 +19,26 @@
 		
         <div id="confirmation">
             <div id="confirmMatter">Matter goes here:</div>
-            <button id="confirmYes">Button Info goes here</button>
-            <button id="confirmNo">Button Info goes here</button>
+            <button class="feature" id="confirmYes">Button Info goes here</button>
+            <button class="feature" id="confirmNo">Button Info goes here</button>
         </div>
 
         <div id="header">
-            <a href="./index.html">Index</a>
+            <div id="navigation">
+                <a href="./index.html">Home</a>
+            </div>
+            <div id="heading">Productivity Meter</div>
         </div>
         
         <div id="selection">
-            <button>Select</button>
+            <button class="feature">Select</button>
         </div>
         
         <div class="selectionCtrls">
-            <input type="checkbox" class="selectAll">
-            <button class="selectAll">Select All</button>
-            <button class="close">Close</button>
+            <input type="checkbox" class="selectAll" id="selectAll">
+            <label for="selectAll"></label>
+            <button class="feature selectAll">Select All</button>
+            <button class="feature close">Close</button>
         </div>
         
         <div id="records">
@@ -42,7 +46,7 @@
         </div>
 
         <div class="selectionCtrls">
-            <button id="delete">Delete</button>
+            <button id="delete" class="feature">Delete</button>
         </div>
 
         <script type="text/html" id="recordTemplate">
@@ -51,7 +55,8 @@
                 <div class="clickable"></div>
 
                 <div class="recordDetails">
-                    <input type="checkbox" class="recordTickBox">
+                    <input type="checkbox" id="recordTickBox_@record_id@" class="recordTickBox" />
+                    <label for="recordTickBox_@record_id@" class="recordTickLabel"></label>
                     <button class="toggler" pos=0>V</button>
                     <h2 class="recordName">@name@</h2>
                     <div class="timesData">Date Saved: @record_time@ <br/>Time Devoted: @devoted_time@   <br/>Actual Time Used : @used_time@   <br/>Time Wasted : @wasted_time@ </div>
