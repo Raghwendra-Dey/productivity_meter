@@ -10,6 +10,17 @@ watchRunning = [0, 0];
 isrunningAverage = false;  //bool variable to indicate whether the average time counter is running or not
 runningAverage=0;  
 
+
+
+//For pop up messages when the number of problems solved is increased/decreased
+//variable declaration for accessing element names 
+var pop_min=document.getElementById("minus_modal");
+var pop_pls=document.getElementById("plus_modal");
+var pop_zero_prb=document.getElementById("zero_prb");
+var pop_rst=document.getElementById("pop_rst");
+
+
+
 function displayTimer(id) {
   // initilized all local variables:
   var hours='00', minutes='00',
@@ -51,7 +62,7 @@ function displayTimer(id) {
   if(T[id].difference > 3600000) {
     hours = Math.floor(T[id].difference/3600000);
     // if (hours > 24) {
-    // 	hours = hours % 24;
+    //  hours = hours % 24;
     // }
     if(hours < 10) {
       hours = '0'+String(hours);
@@ -111,7 +122,7 @@ function updateDifference() {
   if(difference > 3600000) {
     hours = Math.floor(difference/3600000);
     // if (hours > 24) {
-    // 	hours = hours % 24;
+    //  hours = hours % 24;
     // }
     if(hours < 10) {
       hours = '0'+String(hours);
@@ -185,14 +196,25 @@ function clearTimer(id) {
 }
 
 // counter part
+//function to be called when +1 is clicked 
 function prb_plus()
 {
+  //for increment in the number of problem solved
   var x = document.getElementById('prb_count').innerHTML.split(": ");
   var cnt=Number(x[x.length-1])+1;
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
-  if(isrunningAverage)
-  {updateAverage(cnt);}        
+
+  //for display of pop-up messgae
+  if(pop_min.style.display==="block"){pop_min.style.display="none";}
+  if(pop_zero_prb.style.display==="block"){pop_zero_prb.style.display="none";}
+  if(pop_rst.style.display==="block"){pop_rst.style.display="none";}
+  pop_pls.style.opacity=1;
+  pop_pls.style.display="block";
+
+  //setting a timer to call the function for automatic fade off after 2.5sec
+  window.setTimeout(fade_out_plus,2500);
 }
+
 
 //updating average when plus or minus  button is pressed
 function updateAverage(cnt){
@@ -234,10 +256,35 @@ function updateAverage(cnt){
 
 }
 
+//function t be called when -1 is clicked
 function prb_minus()
 {
+  //decreasing the problem count 
   var x = document.getElementById('prb_count').innerHTML.split(": ");
   var cnt=Number(x[x.length-1])-1;
+  
+  //for pop up messgae to appear when the problem count is decreased
+  if(cnt>=0){
+    if(pop_pls.style.display==="block"||pop_rst.style.display==="block")
+    {
+    pop_pls.style.display="none";
+    pop_rst.style.display="none";
+    }
+    pop_min.style.opacity=1;
+    pop_min.style.display="block";
+    window.setTimeout(fade_out_minus,3000);
+  }
+
+  //for pop up message to appear when problem count is zero and
+  //the user is still clicking -1
+  else{
+    if(pop_min.style.display==="block"){pop_min.style.display="none";}
+    if(pop_pls.style.display==="block"){pop_pls.style.display="none";}
+    if(pop_rst.style.display==="block"){pop_rst.style.display="none";}
+    pop_zero_prb.style.opacity=1;
+    pop_zero_prb.style.display="block";
+    window.setTimeout(fade_zero_prb,7000)
+  }
   if(cnt<0) cnt=0;
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
 }
@@ -264,4 +311,72 @@ function rst()
   T[2].delta =0;
   runningAverage =0;
   document.getElementById('record').style.background='white';
+  if(pop_min.style.display==="block"||pop_pls.style.display==="block"||pop_zero_prb.style.display==="block"){
+    pop_min.style.display="none";
+    pop_pls.style.display="none";
+    pop_zero_prb.style.display="none";
+    }
+  pop_rst.style.opacity=1;
+  pop_rst.style.display="block";
+  window.setTimeout(fade_pop_rst,7000);
+}
+function fade_out_plus(){
+  // introducing a function to reduce opacity by 0.05 with every 100ms.
+ var intervalID=setInterval(function()
+                          {
+                            if(pop_pls.style.opacity>=0)
+                              {
+                                if(pop_pls.style.opacity==0.05)
+                                {
+                                  pop_pls.style.opacity=pop_pls.style.opacity-0.05;
+                                  pop_pls.style.display="none";
+                                }
+                                else{pop_pls.style.opacity=pop_pls.style.opacity-0.05;}
+                               }
+                                    
+                            else {clearInterval(intervalID);}
+                          },100);
+}
+//function for the fading off of pop up messgae(for -1)
+function fade_out_minus(){
+  var intervalIDm=setInterval(function()
+                          {
+                            
+                           if(pop_min.style.opacity>=0)
+                              {
+                                if(pop_min.style.opacity==0.1){
+                                  pop_min.style.opacity=pop_min.style.opacity-0.1;
+                                 pop_min.style.display="none";
+                                }
+                                else{pop_min.style.opacity=pop_min.style.opacity-0.1;
+                                }
+                               }
+                                    
+                            else {clearInterval(intervalIDm);
+
+                              //text.style.opacity=1;
+                              //document.getElementById("minus_modal").style.display="none";
+                            }
+                          },100);
+}
+//funtion to be called when reset button is clicked 
+
+
+
+//functions to be called when cross button ic clicked 
+//for pop up message of decrement
+function vanish_minus(){
+  pop_min.style.display="none";
+}
+//for pop up message of increment
+function vanish_plus(){
+  pop_pls.style.display="none";
+}
+//for pop up message of clicking at -1 when problem count is already 0 
+function fade_zero_prb(){
+  pop_zero_prb.style.display="none";
+}
+//for pop up message of reset button click
+function fade_pop_rst(){
+  pop_rst.style.display="none";
 }
