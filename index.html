@@ -14,10 +14,12 @@
 		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
 	<!--Font Awesome -->
-	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	<!--<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>-->
+	<script src="https://kit.fontawesome.com/9a8e0f426e.js" crossorigin="anonymous"></script>
 
 	<!--Internal CSS-->
 	<link href="./style.css" rel="stylesheet">
+	<link href="./style_pop.css" rel="stylesheet">
 
 </head>
 
@@ -98,6 +100,31 @@
 		
 		<p id="prb_count">Problems Count: 0</p>
 		<p id="Average time">Average time/problem :0 mins</p>
+	</div>
+	<div class='active' id="plus_modal">
+			<span class="cross1" onclick="vanish_plus()" ><i class="far fa-times-circle"></i></span>
+			<span class="icon-up"><i class="far fa-thumbs-up"></i></span>
+			<span class ="txt">Well done!</br> Keep it up</span>
+		    </br>
+		    <span class="txt1" >Let's go for another problem.</span>
+
+	</div>
+	<div class='active' id="minus_modal">
+		<span class="icon-sad"><i class="far fa-sad-tear"></i></span>
+		    <span class="cross2" onclick="vanish_minus()" ><i class="far fa-times-circle"></i></span>
+		    <span class ="txt2" >Oops!</br> </span>
+		    </br>
+		    <span class="txt3" >You've got an extra problem to solve.</span>
+	</div>
+    <div  class="inactive" id="zero_prb">
+	    	<span class="cross3" onclick="fade_zero_prb()"><i class="far fa-times-circle"></i></span>
+	        <span  class="txt4">Hey!</span></br> You are already at problem count zero.
+	</div>
+	<div id="pop_rst">
+	    	<span class="run"><i class="fas fa-running"></i></span>
+	    	<span class="cross4" onclick="fade_pop_rst()"><i class="far fa-times-circle"></i></span></br>
+	    	<span class="txt5">Let's began!</span>
+            
 	</div>
 
 	<!-- Footer -->
