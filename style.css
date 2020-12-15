@@ -157,11 +157,12 @@ body {
     }
 
     #deleteButton{
-        width: 1.5rem;
+        width: 2rem;
         height: 2rem;
         font-size: 1.2rem;
         color: red;
         transition: ease-in-out 0.2s;
+        border: 0;
     }
 
     #deleteButton:hover{
