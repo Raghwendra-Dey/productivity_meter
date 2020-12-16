@@ -1,10 +1,6 @@
-#plus_modal,#minus_modal,#zero_prb,#pop_rst{
-	position:fixed;
+#plus_modal,#minus_modal.active,#zero_prb,#pop_rst{
     font-family:Arial, Helvectia, sans-serif;
-	bottom:0%;
-	right:0%;
 	transform:translate(-50%,-50%) scale(0);
-	/*transition: 5000ms ease-in-out;*/
 	border:1.5px solid black;
 	border-radius:8px;
 	overflow:auto;
@@ -16,10 +12,29 @@
     box-shadow: 0 10px 30px black;
     opacity:1;
 }
+#plus_modal.active{
+	position:fixed;
+	bottom:-5%;
+	right:-5%;
+}
+#minus_modal.active{
+	position:fixed;
+	bottom:-5%;
+	right:-7%;
+}
+#zero_prb{
+	position:fixed;
+	bottom:0%;
+	right:-8%;
+}
+#pop_rst{
+	position:fixed;
+	bottom:0;
+	right:0;
+}
 #plus_modal.active,#minus_modal.active,#zero_prb,#pop_rst{
 	transform:translate(-50%,-50%) scale(1);
 }
-
 .icon-up{
 	float:left;
 	font-size:50px;
