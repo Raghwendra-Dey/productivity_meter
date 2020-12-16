@@ -266,9 +266,9 @@ function rst()
   document.getElementById('record').style.background='white';
 }
 
-function checker(entrdv.value){
-    breakDur=entrdv.value;
-    if(!(isNaN(entrdv.value))){
+function checker(x){
+    breakDur=x;
+    if(!(isNaN(x))){
     console.log("Entered value should be a number")
     }
 }
