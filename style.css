@@ -169,3 +169,15 @@ body {
 #footer a:hover {
   color: pink;
 }
+
+#checker {
+  width: 660px;
+  font-size: 40px;
+  background-color: black;
+  color: limegreen;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 300px;
+  padding-top: 50px;
+}
