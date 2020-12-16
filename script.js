@@ -9,7 +9,7 @@ DiffWatch = document.querySelector('.watch3 .timer');
 watchRunning = [0, 0];
 isrunningAverage = false;  //bool variable to indicate whether the average time counter is running or not
 runningAverage=0;  
-
+var breakDur=20;
 function displayTimer(id) {
   // initilized all local variables:
   var hours='00', minutes='00',
@@ -265,6 +265,7 @@ function rst()
   runningAverage =0;
   document.getElementById('record').style.background='white';
 }
+
 function checker(entrdv){
     breakDur=entrdv;
     if(!(isNan(breakDur))){
