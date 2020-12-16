@@ -171,6 +171,7 @@ body {
 }
 
 #checker {
+  text-align:center;
   width: 660px;
   font-size: 40px;
   background-color: black;
