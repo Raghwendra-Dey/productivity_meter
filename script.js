@@ -268,7 +268,7 @@ function rst()
 
 function checker(entrdv){
     breakDur=entrdv;
-    if(!(isNan(breakDur))){
+    if(!(isNaN(breakDur))){
     console.log("Entered value should be a number")
     }
 }
