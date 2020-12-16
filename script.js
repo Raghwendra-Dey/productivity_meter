@@ -267,11 +267,11 @@ function rst()
 }
 
 function checker(x){
-    console.log(x);
+    
     breakDur=x;
     if((isNaN(x))){
       console.log("Entered value should be a number")
     
     }
-    console.log(x);
+    
 }
