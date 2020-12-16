@@ -265,3 +265,9 @@ function rst()
   runningAverage =0;
   document.getElementById('record').style.background='white';
 }
+function checker(entrdv){
+    breakDur=entrdv;
+    if(!(isNan(breakDur))){
+    console.log("Entered value should be a number")
+    }
+}
