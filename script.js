@@ -211,7 +211,7 @@ function prb_plus()
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
   if(isrunningAverage)
   {updateAverage(cnt);}
-
+  
   //for display of pop-up messgae
   if(pop_min.style.display==="block"){pop_min.style.display="none";}
   if(pop_zero_prb.style.display==="block"){pop_zero_prb.style.display="none";}
