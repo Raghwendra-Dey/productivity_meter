@@ -1,99 +1,184 @@
-#timer {
-  width: 460px;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.timer {
+  width: 500px;
   font-size: 70px;
   background-color: black;
   color: limegreen;
   padding: 25px;
   border-radius: 10px;
 }
-#labels {
+.labels {
   margin-top: -25px;
   z-index: 2;
   color: limegreen;
   font-size: 12px;
 }
 
-#hh {margin-left: 45px;}
-#mm {margin-left: 80px;}
-#ss {margin-left: 70px;}
-#ms {margin-left: 45px;}
+.hh {
+  margin-left: 45px;
+}
 
-#controls {
-  margin-left:150px;
+.mm {
+  margin-left: 80px;
+}
+
+.ss {
+  margin-left: 70px;
+}
+
+.cs {
+  margin-left: 45px;
+}
+
+.controls {
+  margin-left: 150px;
   margin-top: 30px;
 }
 
 button {
-  width: 100px;
-  height: 40px;
-  float: left;
-  margin-left: 25px;
-  font-size: 25px;
-  font-weight: bold;
-  border-radius: 10px;
   box-shadow: 5px 5px 5px #888888;
 }
 
-.watches
-{
+.watches {
   text-align: center;
 }
-.watch1
-{
+
+.watch1 {
   text-align: left;
   display: inline-block;
   width: 50%;
 }
 
-.watch2
-{
+.watch2 {
   text-align: left;
   display: inline-block;
   width: 40%;
 }
 
-.watch3
-{
+.watch3 {
   text-align: left;
   display: inline-block;
   width: 40%;
 }
 
-.text
-{
+.text {
   color: #fff;
   font-size: 25px;
 }
 
-#go    { background-color: limegreen; }
+.textbox
+{
+  font-size: 18px;
+}
 
+#go {
+  background-color: limegreen;
+}
 
-#stop  { background-color: red;  display: none; }
+#stop {
+  background-color: red;
+  display: none;
+}
 
-#clear { background-color: yellow; display: none;}
+#clear {
+  background-color: yellow;
+  display: none;
+}
 
-#plus    { background-color: limegreen; }
-#minus  { background-color: red; }
+#plus {
+  background-color: limegreen;
+}
+
+#minus {
+  background-color: red;
+}
+
+/* Buttons */
+button,  .input{
+  transform: scale(0.9);
+}
+
+button:hover, .input{
+  transform: scale(1);
+  opacity: 0.8;
+}
+
+#todo_container {
+  width: 820px;
+  height: 400px;
+  font-size: 40px;
+  background-color: black;
+  color: limegreen;
+  padding: 10px 25px;
+  border-radius: 10px;
+  margin: 50px auto;
+}
+
+#todo_list{
+  height: 200px;
+  overflow-y: auto;
+}
+
 #prb_cntr {
-  width: 420px;
+  width: 600px; 
+  font-size: 40px;
+  background-color: black;
+  color: limegreen;
+  padding: 50px 20px ;
+  border-radius: 10px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+#prb_count {
+  /* text-align: center; */
+  margin-top: 75px;
+  margin-left: 12px;
+}
+
+body,
+button {
+  font-family: "Courier";
+}
+
+body {
+  background-color: #0000fa;
+}
+
+#footer {
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.712);
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  font-family: cursive;
+  letter-spacing: 3px;
+  font-size: large;
+}
+
+#footer a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+#footer a:hover {
+  color: pink;
+}
+
+#checker {
+  text-align:center;
+  width: 660px;
   font-size: 40px;
   background-color: black;
   color: limegreen;
   padding: 25px;
   border-radius: 10px;
   margin-top: 50px;
-  margin-left: 400px;
+  margin-left: 300px;
   padding-top: 50px;
-}
-#prb_count
-{
-  margin-top: 75px;
-  margin-left: 12px;
-}
-
-body, button {
-  font-family: 'Courier';
-}
-body{
-  background-color: #0000fa;
 }
