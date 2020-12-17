@@ -248,7 +248,7 @@ intervalID=setInterval(function()
                                   pop_pls.style.display="none";
                                 }
                                 else{pop_pls.style.opacity=pop_pls.style.opacity-0.1;}
-                                console.log(pop_pls.style.opacity);
+//                                 console.log(pop_pls.style.opacity);
                                }
                                     
                             else {clearInterval(intervalID);}
