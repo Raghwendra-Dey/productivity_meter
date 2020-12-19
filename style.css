@@ -1,234 +1,16 @@
-
 body {
-  margin: 0;
-  padding: 0;
-  background: #2b2d34 url(assets/cover-background.jpg) center;
-  background-size: cover;
-  width:100%;
-}
-#timer {
-  width: 500px;
-  font-size: 70px;
-  background-color: black;
-  color: limegreen;
-  padding: 25px;
-  border-radius: 10px;
-}
-#labels {
-  margin-top: -25px;
-  z-index: 2;
-  color: limegreen;
-  font-size: 12px;
-}
-
-#hh {
-  margin-left: 45px;
-}
-#mm {
-  margin-left: 80px;
-}
-#ss {
-  margin-left: 70px;
-}
-#ms {
-  margin-left: 45px;
-}
-
-
-/* Navigation Bar */
-.navbar {
-  padding: 0rem 3rem !important;
-}
-
-.navbar-brand {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  font-size: 2rem !important;
-
-}
-
-.nav-link {
-  font-family: "Monserrat-Light";
-  margin: 0.5rem 0.5rem;
-}
-
-.nav-link:hover {
-  transform: translate(0) scale(1.2);
-  transform: translateY(-4px);  
-}
-
-.fa-github{
-  font-size: 2rem;
-}
-
-.fa-info-circle{
-  font-size: 2rem;
-}
-
-#controls {
-  margin-left: 150px;
   margin-top: 30px;
-}
-
-button {
-
-  box-shadow: 5px 5px 5px #888888;
-}
-
-.watches {
-  text-align: center;
-}
-.watch1 {
-  text-align: left;
-  display: inline-block;
-  width: 50%;
-}
-
-.watch2 {
-  text-align: left;
-  display: inline-block;
-  width: 40%;
-}
-
-.watch3 {
-  text-align: left;
-  display: inline-block;
-  width: 40%;
-}
-
-.text {
-  color: #fff;
-  font-size: 25px;
-}
-
-.textbox
-{
-  font-size: 18px;
-}
-
-#go {
-  background-color: limegreen;
-}
-
-#stop {
-  background-color: red;
-  display: none;
-}
-
-#clear {
-  background-color: yellow;
-  display: none;
-}
-
-#plus {
-  background-color: limegreen;
-}
-
-#minus {
-  background-color: red;
-}
-
-#todo_container {
-  width: 820px;
-  height: 400px;
-  font-size: 40px;
-  overflow-y: auto;
-  background-color: black;
-  color: limegreen;
-  padding: 25px;
-  border-radius: 10px;
-  margin-top: 50px;
-  margin-left: 200px;
-  padding-top: 5px;
-}
-
-#prb_cntr {
-  width: 420px;
-  font-size: 40px;
-  background-color: black;
-  color: limegreen;
-  padding: 25px;
-  border-radius: 10px;
-  margin-top: 50px;
-  margin-left: 400px;
-  padding-top: 50px;
-}
-
-#prb_count {
-  margin-top: 75px;
-  margin-left: 12px;
-}
-
-body,
-button {
-  font-family: "Courier";
-}
-body {
-  background-color: #0000fa;
-}
-#footer {
-  text-align: center;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.712);
-  /* width: 100vw; */
-  margin-top: 1.5rem;
-  padding: 1.5rem;
-  font-family: cursive;
-  letter-spacing: 3px;
-  font-size: large;
-}
-#footer a {
-  text-decoration: none;
-  cursor: pointer;
-  color: #fff;
-}
-#footer a:hover {
-  color: pink;
-}
-
-/* Typewriter */
-.typewriter {
-  border-right: solid 3px rgba(0,255,0,.75);
-  white-space: nowrap;
-  overflow: hidden;    
-  font-family: 'Fredericka the Great', cursive;  
-  font-size: 3rem;
-  color: rgba(241, 198, 58, 0.7);
-  margin: 2rem auto 3rem;
-}
-
-/* Animation */
-.typewriter {
-  animation: animated-text 4s steps(30,end) 1s 1 normal both,
-             animated-cursor 600ms steps(30,end) infinite;
-}
-
-/* text animation */
-@keyframes animated-text{
-  from{width: 0;}
-  to{width: 40rem;}
-}
-
-/* cursor animations */
-@keyframes animated-cursor{
-  from{border-right-color: rgba(0,255,0,.75);}
-  to{border-right-color: transparent;}
-
-body {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-}
-
-.timer{
-  width: 500px;
-  font-size: 70px;
+.timer {
+  width: 95%;
+  font-size:6vw;
   background-color: black;
   color: limegreen;
-  padding: 25px;
+  padding: 8px;
   border-radius: 10px;
+  font-weight: 900;
 }
 
 .labels {
@@ -255,8 +37,8 @@ body {
 }
 
 .controls {
-  margin-left: 150px;
-  margin-top: 30px;
+  margin-left: 30%;
+  margin-top: 25px;
 }
 
 button {
@@ -268,26 +50,29 @@ button {
 }
 
 .watch1 {
-  text-align: left;
+  text-align: center;
   display: inline-block;
-  width: 50%;
+  width: 48%;
 }
 
 .watch2 {
-  text-align: left;
+  text-align: center;
   display: inline-block;
-  width: 40%;
+  width: 48%;
 }
 
 .watch3 {
-  text-align: left;
+  margin-top: 20px;
+  text-align: center;
   display: inline-block;
-  width: 40%;
+  width: 48%;
 }
 
 .text {
   color: #fff;
-  font-size: 25px;
+  font-size: 4vw;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .textbox
@@ -296,25 +81,51 @@ button {
 }
 
 #go {
+   font-size:3vw;
   background-color: limegreen;
+   font-weight: bold;
+   border-radius: 1vw;
+
 }
 
 #stop {
   background-color: red;
   display: none;
+   font-size:3vw;
+    font-weight: bold;
+    border-radius: 1vw;
+
 }
 
 #clear {
   background-color: yellow;
   display: none;
+   font-size:3vw;
+    font-weight: bold;
+    border-radius: 1vw;
+
+}
+
+#add{
+ background-color: limegreen;
+ font-weight: bold;
+ font-size:2.7vw;
+ border-radius: 1vw;
+
 }
 
 #plus {
   background-color: limegreen;
-}
+   font-weight: bold;
+   border-radius: 1vw;
+  }
 
 #minus {
   background-color: red;
+   font-weight: bold;
+   border-radius: 1vw;
+
+
 }
 
 /* Buttons */
@@ -328,14 +139,14 @@ button:hover, .input{
 }
 
 #todo_container {
-  width: 820px;
-  height: 400px;
-  font-size: 40px;
+  width: 70%;
+  height: 450px;
   background-color: black;
   color: limegreen;
-  padding: 10px 25px;
+  padding: 10px;
   border-radius: 10px;
-  margin: 50px auto;
+    margin: 50px auto;
+
 }
 
 #todo_list{
@@ -344,8 +155,10 @@ button:hover, .input{
 }
 
 #prb_cntr {
-  width: 600px; 
-  font-size: 40px;
+  width: 55%; 
+  font-size: 2.5vw;
+   font-weight: bold;
+
   background-color: black;
   color: limegreen;
   padding: 50px 20px ;
@@ -355,14 +168,18 @@ button:hover, .input{
 }
 
 #prb_count {
-  /* text-align: center; */
-  margin-top: 75px;
+   text-align: center; 
+   
+    font-weight: bold;
+
+  margin-top: 45px;
   margin-left: 12px;
 }
 
 body,
 button {
   font-family: "Courier";
+  margin:8px;
 }
 
 body {
@@ -377,7 +194,18 @@ body {
   padding: 1.5rem;
   font-family: cursive;
   letter-spacing: 3px;
-  font-size: large;
+  font-size: 2.15vw;
+}
+
+#record{
+ font-weight: bold;
+ border-radius: 1vw;
+
+}
+
+#reset{
+  font-weight: bold;
+  border-radius: 1vw;
 }
 
 #footer a {
@@ -388,4 +216,11 @@ body {
 
 #footer a:hover {
   color: pink;
+}
+
+
+@media (max-width: 500px){
+   #todo_container {
+    height:320px;
+   }
 }
