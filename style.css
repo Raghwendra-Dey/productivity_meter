@@ -1,4 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.timer {
+  width: 500px;
+  font-size: 70px;
+  background-color: black;
+  color: limegreen;
+  padding: 25px;
+  border-radius: 10px;
+}
+.labels {
+  margin-top: -25px;
+  z-index: 2;
+  color: limegreen;
+  font-size: 12px;
+}
+
+.hh {
+  margin-left: 45px;
+}
+
+.mm {
+  margin-left: 80px;
+}
+
+.ss {
+  margin-left: 70px;
+}
+
+.cs {
+  margin-left: 45px;
+}
+
+.controls {
+  margin-left: 150px;
+  margin-top: 30px;
+}
+
+button {
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.watches {
+  text-align: center;
+}
+
+.watch1 {
+  text-align: left;
+  display: inline-block;
+  width: 50%;
+}
+
+.watch2 {
+  text-align: left;
+  display: inline-block;
+  width: 40%;
+}
+
+.watch3 {
+  text-align: left;
+  display: inline-block;
+  width: 40%;
+}
+
+.text {
+  color: #fff;
+  font-size: 25px;
+}
+
+.textbox
+{
+  font-size: 18px;
+}
+
+#go {
+  background-color: limegreen;
+}
+
+#stop {
+  background-color: red;
+  display: none;
+}
+
+#clear {
+  background-color: yellow;
+  display: none;
+}
+
+#plus {
+  background-color: limegreen;
+}
+
+#minus {
+  background-color: red;
+}
+
+/* Buttons */
+.btn1,  .input{
+  transform: scale(0.9);
+}
+
+.btn1:hover, .input{
+  transform: scale(1);
+  opacity: 0.8;
+}
+
+#record{
+  color: pink;
+  background-color: rgb(102, 41, 102);
+}
+#todo_container {
+  width: 820px;
+  height: 400px;
+  font-size: 40px;
+  background-color: black;
+  color: limegreen;
+  padding: 10px 25px;
+  border-radius: 10px;
+  margin: 50px auto;
+}
+
+#todo_list{
+  height: 200px;
+  overflow-y: auto;
+}
+
+#prb_cntr {
+  width: 600px; 
+  font-size: 40px;
+  background-color: black;
+  color: limegreen;
+  padding: 50px 20px ;
+  border-radius: 10px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+#prb_count {
+  /* text-align: center; */
+  margin-top: 75px;
+  margin-left: 12px;
+}
+
+body,
+button {
+  font-family: "Courier";
+}
 
 body {
         margin: 0;

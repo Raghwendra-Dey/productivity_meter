@@ -1,10 +1,14 @@
 // timer part
 // global object
-T = [{}, {}] ;
+//There are three timers including the average time counter
+T = [{}, {},{}] ;
+
 T[0].timerDiv = document.querySelector('.watch1 .timer');
 T[1].timerDiv = document.querySelector('.watch2 .timer');
 DiffWatch = document.querySelector('.watch3 .timer');
 watchRunning = [0, 0];
+isrunningAverage = false;  //bool variable to indicate whether the average time counter is running or not
+runningAverage=0;  
 
 function displayTimer(id) {
   // initilized all local variables:
@@ -12,7 +16,6 @@ function displayTimer(id) {
   miliseconds=0, seconds='00',
   time = '',
   timeNow = new Date().getTime(); // timestamp (miliseconds)
-
   T[id].difference = timeNow - T[id].timerStarted;
 
   // milliseconds
@@ -25,7 +28,7 @@ function displayTimer(id) {
   // seconds
   if(T[id].difference > 1000) {
     seconds = Math.floor(T[id].difference / 1000);
-    if (seconds > 60) {
+    if (seconds >= 60) {   
       seconds = seconds % 60;
     }
     if(seconds < 10) {
@@ -36,7 +39,7 @@ function displayTimer(id) {
   // minutes
   if(T[id].difference > 60000) {
     minutes = Math.floor(T[id].difference/60000);
-    if (minutes > 60) {
+    if (minutes >= 60) {
       minutes = minutes % 60;
     }
     if(minutes < 10) {
@@ -85,7 +88,7 @@ function updateDifference() {
   // seconds
   if(difference > 1000) {
     seconds = Math.floor(difference / 1000);
-    if (seconds > 60) {
+    if (seconds >= 60) {
       seconds = seconds % 60;
     }
     if(seconds < 10) {
@@ -96,7 +99,7 @@ function updateDifference() {
   // minutes
   if(difference > 60000) {
     minutes = Math.floor(difference/60000);
-    if (minutes > 60) {
+    if (minutes >= 60) {
       minutes = minutes % 60;
     }
     if(minutes < 10) {
@@ -187,6 +190,48 @@ function prb_plus()
   var x = document.getElementById('prb_count').innerHTML.split(": ");
   var cnt=Number(x[x.length-1])+1;
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
+  if(isrunningAverage)
+  {updateAverage(cnt);}        
+}
+
+//updating average when plus or minus  button is pressed
+function updateAverage(cnt){
+  var minutes='00',seconds='00',time='';
+  if(cnt==0){
+    runningAverage=0;
+    document.getElementById('Average time').innerHTML="Average time/problem: 0 mins";
+  }
+  else{
+    timeNow = new Date().getTime();
+    temp =timeNow-T[2].prevtime;  //Updating the runningAverage using "current_timestamp - previous timestamp(T[2].prevtime)"
+    Totaltime = runningAverage * (cnt-1);   
+    Totaltime +=temp;
+    runningAverage = Totaltime/(cnt);
+    T[2].prevtime =timeNow;
+    // seconds
+    if(runningAverage > 1000) {
+      seconds = Math.floor(runningAverage / 1000);
+      if (seconds >= 60) {
+        seconds = seconds % 60;
+      }
+      if(seconds < 10) {
+        seconds = '0'+String(seconds);
+      }
+    }
+    
+    // minutes
+    if(runningAverage > 60000) {
+      minutes = Math.floor(runningAverage/60000);
+      if(minutes < 10) {
+        minutes = '0'+String(minutes);
+      }
+    }
+
+    time=minutes+':';
+    time+=seconds;
+    document.getElementById('Average time').innerHTML="Average time/problem: "+time+" mins";
+  }
+
 }
 
 function prb_minus()
@@ -197,7 +242,26 @@ function prb_minus()
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
 }
 
+function record()
+{
+  if(!isrunningAverage){        //Averagetime counter is turned on we update previous timestamp,along with the difference from previous session"
+    T[2].prevtime= new Date().getTime();
+    if(T[2].delta>0)T[2].prevtime=T[2].prevtime-T[2].delta;
+    document.getElementById('record').style.background='blue';    //Color introduced so user can realise that the timer is running
+  }
+  else{        //Average time counter turned off 
+    T[2].delta = new Date().getTime() - T[2].prevtime;
+    document.getElementById('record').style.background='white';
+  }
+  isrunningAverage ^= true;    //switching the bool variable to indicate whether timer is running or not
+}
+
 function rst()
 {
   document.getElementById('prb_count').innerHTML="Problems Count: 0";
+  document.getElementById('Average time').innerHTML="Average time/problem: 0 mins";
+  isrunningAverage =false;
+  T[2].delta =0;
+  runningAverage =0;
+  document.getElementById('record').style.background='white';
 }
