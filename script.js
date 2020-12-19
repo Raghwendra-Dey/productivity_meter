@@ -368,10 +368,10 @@ function record()
     T[2].prevtime= new Date().getTime();
     if(T[2].delta>0)T[2].prevtime=T[2].prevtime-T[2].delta;
     document.getElementById('record').style.background='blue';    //Color introduced so user can realise that the timer is running
+    document.getElementById('record').style.color=' white';
   }
   else{        //Average time counter turned off 
     T[2].delta = new Date().getTime() - T[2].prevtime;
-    document.getElementById('record').style.background='white';
   }
   isrunningAverage ^= true;    //switching the bool variable to indicate whether timer is running or not
 }

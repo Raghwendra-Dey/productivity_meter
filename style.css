@@ -164,9 +164,7 @@ body,
 button {
   font-family: "Courier";
 }
-body {
-  background-color: #0000fa;
-}
+
 #footer {
   text-align: center;
   color: #fff;
@@ -333,9 +331,12 @@ button {
 }
 
 #record:hover{
-  background-color:white;
+  background-color: white;
   color: rgb(102, 41, 102);
 }
+
+
+/* Todo List */
 
 #todo_container {
   width: 820px;
@@ -351,6 +352,47 @@ button {
 #todo_list{
   height: 200px;
   overflow-y: auto;
+}
+
+#deleteButton{
+  font-size: 1.2rem;
+  margin-left: -1.9rem;
+  background-color: white;
+  outline: none;
+  border: none;
+  font-weight: bolder;
+  color: rgb(95, 95, 95);
+}
+
+#deleteButton:hover{
+  color:red;
+}
+
+
+#textName{
+  width: 30rem;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0.2rem;
+}
+
+.todoHeading{
+  width: 10rem;
+  font-size: 3rem;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  border-bottom: 4px solid limegreen;
+  border-bottom-style: ridge;
+  margin-bottom: -1rem;
+  padding-bottom: -1rem;
+}
+
+#checkButton{
+  width: 1.4rem;
+  height: 1.1rem;
+  border-radius: 0;
+  border: 0;
+  margin-right: 1%;
 }
 
 #prb_cntr {
@@ -446,7 +488,7 @@ body {
     
     .text {
         color: #fff;
-        font-size: 25px;
+        font-size: 3rem;
     }
     
     .textbox {
@@ -513,23 +555,6 @@ body {
         margin-bottom: 0.5rem;
     }
     
-    .todoHeading{
-        width: 10rem;
-        font-size: 3rem;
-        font-family: 'Ubuntu', sans-serif;
-        color: white;
-        border-bottom: 2px solid limegreen;
-        border-bottom-style: ridge;
-        margin: 0% auto;
-    }
-
-    #checkButton{
-        width: 1.4rem;
-        height: 1.1rem;
-        border-radius: 0;
-        border: 0;
-        margin: 0rem 0.8rem;
-    }
 
 #footer a:hover {
   color: pink;
