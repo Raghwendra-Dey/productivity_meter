@@ -6,6 +6,11 @@ This does so by measuring the delta between the time spent minus the time wasted
 Use it [here](https://raghwendra-dey.github.io/productivity_meter/).<br>
 ## App in Action:
 ![App in Action](https://user-images.githubusercontent.com/45457947/101276377-2f3b3000-37d2-11eb-87a1-c487fe97981c.png)
+> This website is responsive and can be used on mobile phones, tablets, laptops etc.<br>
+Mobile Phone view
+![Mobile Phone View](https://user-images.githubusercontent.com/60804824/102695754-53295780-424f-11eb-84ef-cb2aaa4d4cf5.jpeg)
+![2](https://user-images.githubusercontent.com/60804824/102695775-76ec9d80-424f-11eb-8398-8b94679a83c6.jpeg)
+
 ## Usage:
 > This App helped me a lot in my studies to keep track of my time wastage and making me aware of the real scenario of actual time utilization.<br>
 
