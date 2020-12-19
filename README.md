@@ -17,7 +17,7 @@ The `difference` block shows the difference between the two timers, i.e. `Time D
 NOTE: It is recommended to use this in laptops only. This project is not made responsive so, could not expect to give a good experience while using in mobile phones. If you wish to make it responsive then do shoot me a PR.<br><br>
 ## Contributing
 * fork the repo
-* Clone the repo from the repo which you just have forked  and the command  should look like 'git clone https://github.com/"your_user_name"/productivity_meter.git'
+* Clone the repo from the repo which you just have forked  and the command  should look like 'git clone https://github.com/"YOUR_USER_NAME"/productivity_meter.git'
 * Open the repo in your local machine and open the `index.html` to run the app in your browser.</br> </br>
 Please join the [gitter channel](https://gitter.im/productivity_meter/community) to interact and discuss with other contributors, about the project. You are welcomed to give your inputs to improve this project. If you found a bug, or want to make a feature request, please go ahead and [raise an issue](https://github.com/Raghwendra-Dey/productivity_meter/issues/new).</br>
 If you would like to contribute to the designing and UI aspects of the project, then please join [this chat room](https://gitter.im/productivity_meter/UI_works) to take part in its discussions.<br><br>
