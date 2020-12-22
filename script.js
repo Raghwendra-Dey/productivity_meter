@@ -1,7 +1,7 @@
 // timer part
 // global object
 //There are three timers including the average time counter
-T = [{}, {},{}] ;
+let T = [{}, {},{}] ;
 
 T[0].timerDiv = document.querySelector('.watch1 .timer');
 T[1].timerDiv = document.querySelector('.watch2 .timer');
@@ -498,3 +498,56 @@ function fade_pop_rst(){
                             }
                           },100);
 }
+
+function toggleConfirm(status){
+  document.getElementById("backDrop").style.display = status;
+  document.getElementById("confirmation").style.display = status;
+}
+
+toggleConfirm("none");
+
+function save_click(){
+  toggleConfirm("block");
+  document.getElementById("confirmMatter").innerHTML = `
+    Do you want to save? 
+    <br/> 
+    Enter the name of the record for reference:
+    <br/> 
+    <input type="text" id="nameRecord" name="nameRecord" />
+  `;
+  document.getElementById("confirmYes").innerHTML = "Yes, save";
+  document.getElementById("confirmNo").innerHTML = "No, cancel";
+}
+
+document.getElementById("backDrop").addEventListener("click",() => {
+  toggleConfirm("none");
+})
+
+document.getElementById("confirmNo").addEventListener("click",() => {
+  toggleConfirm("none");
+})
+
+
+function save(){
+  let records = JSON.parse(localStorage.getItem("records"));
+  if(records == null){
+    records = {};
+  }
+  let date = new Date();
+  let secns = date.getTime();
+  let new_records = {};
+  
+  new_records.time_recorded = date.toString();
+  new_records.name = document.getElementById("nameRecord").value === "" ? date.toDateString() + "  " + date.getHours() + ":" + date.getMinutes() : document.getElementById("nameRecord").value;
+  new_records.time_devoted = T[0].difference !== undefined ? T[0].difference : 0;
+  new_records.time_actual = T[1].difference !== undefined ? T[1].difference : 0;
+  new_records.time_wasted = new_records.time_devoted - new_records.time_actual;
+  new_records.id = JSON.stringify(secns);
+  
+  new_records.todos = [];
+  records[JSON.stringify(secns)] = new_records;
+  localStorage.setItem("records",JSON.stringify(records));
+  toggleConfirm("none")
+}
+
+document.getElementById("confirmYes").addEventListener("click",save)

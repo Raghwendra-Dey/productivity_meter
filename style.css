@@ -58,11 +58,7 @@ body {
   transform: translateY(-4px);  
 }
 
-.fa-github{
-  font-size: 2rem;
-}
-
-.fa-info-circle{
+.nav-icon{
   font-size: 2rem;
 }
 
