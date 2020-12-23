@@ -124,6 +124,7 @@ $(".recordTickLabel").hide();
 $("#backDrop").hide();
 $("#confirmation").hide();
 $(".clickable").hide();
+$(".selected").hide();
 
 // Event Handlers
 $(".toggler").click(function () {
@@ -156,17 +157,20 @@ $(".selectionCtrls>.closeSelect").click(function () {
     $(this).siblings("input.selectAll").prop("checked", false);
     $(".recordTickBox").prop("checked", false);
     $(".clickable").hide();
+    $(".selected").hide();
 })
 
 // Select all checkbox Click event
 $(".selectionCtrls>input.selectAll").click(function () {
     $(".recordTickBox").prop("checked", $(this).prop("checked"));
+    $(".selected").show();
 })
 
 // Select all button click event
 $(".selectionCtrls>button.selectAll").click(function () {
     $(this).siblings("input.selectAll").prop("checked", true);
     $(".recordTickBox").prop("checked", true);
+    $(".selected").show();
 })
 
 // delete event
@@ -222,6 +226,8 @@ $("#backDrop").click(function () {
 
 $(".clickable").click(function () {
     if (inSelectionMode) {
+        $(this).parentsUntil("#records").parent().siblings("#selectBar").find(".selectAll").prop("checked", false);
+        $(this).children(".selected").toggle();
         let status = $(this).siblings(".recordDetails").find(".recordTickBox").prop("checked");
         $(this).siblings(".recordDetails").find(".recordTickBox").prop("checked", !status);
     }
@@ -246,6 +252,7 @@ $(".record").on('mousedown', function (e) {
         $("#selection").hide();
         $("#delete").show();
         $(".recordTickLabel").show();
+        $(element).find(".selected").show();
         $(".clickable").show();
         $(element).find(".recordTickBox").prop("checked", true);
     }, longpress);

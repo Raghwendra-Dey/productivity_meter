@@ -64,7 +64,7 @@
         <button class="feature btn">Select</button>
     </div>
 
-    <div class="selectionCtrls">
+    <div class="selectionCtrls" id="selectBar">
         <input type="checkbox" class="selectAll" id="selectAll">
         <label for="selectAll"></label>
         <button class="feature btn selectAll">Select All</button>
@@ -82,7 +82,9 @@
     <script type="text/html" id="recordTemplate">
     <div class="record" id="record@record_id@" unique_key="@unique_key@">
         
-        <div class="clickable"></div>
+        <div class="clickable">
+            <div class="selected"></div>
+        </div>
         
         <div class="recordDetails">
             <input type="checkbox" id="recordTickBox_@record_id@" class="recordTickBox" />

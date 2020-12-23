@@ -17,7 +17,6 @@ body{
     position: relative;
     z-index : 1;
     margin: 20px;
-    padding: 10px;
 }
 
 .record .recordName{
@@ -75,6 +74,12 @@ body{
     height: 100%;
     width: 100%;
     z-index: 10;
+}
+
+.selected{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(155, 155, 155, 0.356);
 }
 
 /* UI STYLING */
@@ -141,7 +146,7 @@ body{
 
 .recordDetails{
     line-height: 30px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .toggler{
