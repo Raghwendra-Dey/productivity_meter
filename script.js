@@ -507,6 +507,8 @@ function toggleConfirm(status){
 toggleConfirm("none");
 
 function save_click(){
+  stopTimer(0);
+  stopTimer(1);
   toggleConfirm("block");
   document.getElementById("confirmMatter").innerHTML = `
     Do you want to save? 
@@ -545,6 +547,18 @@ function save(){
   new_records.id = JSON.stringify(secns);
   
   new_records.todos = [];
+
+  let todosArrayHTML = document.getElementsByClassName("taskName");
+  for (let i of todosArrayHTML){
+    if(i.value === "")
+      continue;
+    let newTodo = {};
+    newTodo.name = i.value;
+    newTodo.completed = i.readOnly;
+    console.log(newTodo)
+    new_records.todos.push(newTodo);
+  }
+
   records[JSON.stringify(secns)] = new_records;
   localStorage.setItem("records",JSON.stringify(records));
   toggleConfirm("none")

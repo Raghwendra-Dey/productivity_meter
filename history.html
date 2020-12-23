@@ -107,7 +107,8 @@
 
     <script type="text/html" id="taskTemplate">
             <div class="task" id="task@record_id@_@task_enum@">
-                <input type="checkbox" disabled @completed@>
+                <input type="checkbox" disabled @completed@ id="taskCheckBox@record_id@_@task_enum@" class="taskCheckBox">
+                <label for="taskCheckBox@record_id@_@task_enum@" class="taskTickLabel"></label>
                 <div class="taskName">
                     @task_enum@. @task_name@
                 </div>

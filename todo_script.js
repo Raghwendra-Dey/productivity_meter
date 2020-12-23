@@ -12,6 +12,7 @@ function addTask() {  // This function is called when Add button in todo list is
     const taskName=document.createElement('input');
     taskName.setAttribute('type','text');
     taskName.setAttribute('placeholder','Enter TaskName');
+    taskName.setAttribute('class','taskName');
     taskName.setAttribute('id','taskName'+String(i));
 
     //Add checkbox to container and call doneTask() when selected

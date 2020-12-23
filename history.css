@@ -200,7 +200,7 @@ input[type=checkbox]:disabled + label:before {
 
 input[type=checkbox]:checked:disabled + label:before {
     transform: scale(1);
-    background-color: #bfb;
+    background-color: rgb(104, 146, 104);
     border-color: #bfb;
 }
 
