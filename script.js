@@ -17,6 +17,7 @@ var ID=0;
 var IDm=0;
 var ID_f=0;
 var ID_rst=0;
+let loadedCount;
 
 //For pop up messages when the number of problems solved is increased/decreased
 //variable declaration for accessing element names 
@@ -41,17 +42,22 @@ if(records === null || records === undefined){
 }
 let loadedTimer = new URLSearchParams(window.location.search).get("timer");
 
-if(loadedTimer === null || records[loadedTimer] === undefined){ // New timer i.e. not a loaded from saved ones
+if(loadedTimer === null || records[loadedTimer] === undefined){ 
+  // New timer i.e. not a loaded from saved ones
 }
 
 else{ // Loaded timer from saved ones
   
+  isrunningAverage = false;
+  runningAverage = records[loadedTimer].avg;
+  loadedCount = records[loadedTimer].cnt;
+
   T[0].difference = records[loadedTimer].time_devoted;
   T[1].difference = records[loadedTimer].time_actual;
   updateDifference();
   displayTimer(0,true);
   displayTimer(1,true);
-  
+
   // Make loaded confirmation
   toggleConfirm("block");
   document.getElementById("confirmMatter").innerHTML = `
@@ -307,7 +313,7 @@ intervalID=setInterval(function()
 
 
 //updating average when plus or minus  button is pressed
-function updateAverage(cnt){
+function updateAverage(cnt, isInit = false){
   var minutes='00',seconds='00',time='';
   if(cnt==0){
     runningAverage=0;
@@ -316,8 +322,10 @@ function updateAverage(cnt){
   else{
     timeNow = new Date().getTime();
     temp =timeNow-T[2].prevtime;  //Updating the runningAverage using "current_timestamp - previous timestamp(T[2].prevtime)"
-    Totaltime = runningAverage * (cnt-1);   
-    Totaltime +=temp;
+    Totaltime = runningAverage * (cnt-1); 
+    if(isInit == false){
+      Totaltime +=temp;
+    }
     runningAverage = Totaltime/(cnt);
     T[2].prevtime =timeNow;
     // seconds
@@ -344,6 +352,14 @@ function updateAverage(cnt){
     document.getElementById('Average time').innerHTML="Average time/problem: "+time+" mins";
   }
 
+}
+
+if(loadedTimer === null || records[loadedTimer] === undefined){ 
+  // New timer i.e. not a loaded from saved ones
+}
+else{ // Loaded timer from saved ones
+  document.getElementById('prb_count').innerHTML="Problems Count: " + loadedCount.toString();
+  updateAverage(loadedCount, isInit=true);
 }
 
 //function t be called when -1 is clicked
@@ -583,12 +599,16 @@ function save(){
     new_records.todos.push(newTodo);
   }
 
+  new_records.avg = runningAverage;
+  let x = document.getElementById('prb_count').innerHTML.split(": ");
+  let cnt=Number(x[x.length-1]);
+  new_records.cnt = cnt;
+
   records[new_records.id] = new_records;
   localStorage.setItem("records",JSON.stringify(records));
   toggleConfirm("none")
   window.location.href = "/history.html#" + new_records.id;
 }
-
 
 function save_click(){
   stopTimer(0);
@@ -609,16 +629,15 @@ function save_click(){
   else{ // Loaded timer from saved ones
     document.getElementById("nameRecord").value = records[loadedTimer].name;
   }
-
+  
   document.getElementById("backDrop").addEventListener("click",() => {
     toggleConfirm("none");
   })
-  
+
   document.getElementById("confirmNo").addEventListener("click",() => {
     toggleConfirm("none");
   })
-  
-  
+
   document.getElementById("confirmYes").addEventListener("click",save)
 
 }

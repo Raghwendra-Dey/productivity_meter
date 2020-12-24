@@ -94,6 +94,8 @@ for (const record_id in records) {
         .replace(/@devoted_time@/g, toTime(records[record_id].time_devoted) + ' Hrs')
         .replace(/@used_time@/g, toTime(records[record_id].time_actual) + ' Hrs')
         .replace(/@wasted_time@/g, toTime(records[record_id].time_wasted) + ' Hrs')
+        .replace(/@prob_count@/g, records[record_id].cnt)
+        .replace(/@avg_prob_time@/g, toTime(Math.floor(records[record_id].avg)) + ' Hrs')
     if (count == 0) $("#records").html(record_text);
     else $("#records").append(record_text);
 
