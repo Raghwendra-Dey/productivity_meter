@@ -91,7 +91,8 @@
             <label for="recordTickBox_@record_id@" class="recordTickLabel"></label>
             <button class="toggler" pos=0>V</button>
             <h2 class="recordName">@name@</h2>
-                    <div class="timesData">Date Saved: @record_time@ <br/>Time Devoted: @devoted_time@   <br/>Actual Time Used : @used_time@   <br/>Time Wasted : @wasted_time@ </div>
+            <a href="./index.html?timer=@record_id@"><button class="feature btn">Load into Timer</button></a>
+                    <div class="timesData">Date First Saved: @first_save_time@ <br/>Date Last Saved: @last_save_time@ <br/>Time Devoted: @devoted_time@   <br/>Actual Time Used : @used_time@   <br/>Time Wasted : @wasted_time@ </div>
                 </div>
                 
                 <div class="tasksBlock">
@@ -123,8 +124,8 @@
         </script>
 
     <!--Internal Script.js-->
-    <script src="./history.js"></script>
     <script src="./script.js"></script>
+    <script src="./history.js"></script>
 
 </body>
 

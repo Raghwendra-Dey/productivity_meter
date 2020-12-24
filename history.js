@@ -80,7 +80,7 @@ const toTime = (millis = 0) => {
     return(time);
 }
 
-let records = JSON.parse(localStorage.getItem("records"));
+records = JSON.parse(localStorage.getItem("records"));
 let count = 0;
 
 for (const record_id in records) {
@@ -89,7 +89,8 @@ for (const record_id in records) {
         .replace(/@record_id@/g, records[record_id].id)
         .replace(/@unique_key@/g, records[record_id].id)
         .replace(/@name@/g, records[record_id].name)
-        .replace(/@record_time@/g, records[record_id].time_recorded)
+        .replace(/@first_save_time@/g, records[record_id].first_save_time)
+        .replace(/@last_save_time@/g, records[record_id].last_save_time)
         .replace(/@devoted_time@/g, toTime(records[record_id].time_devoted) + ' Hrs')
         .replace(/@used_time@/g, toTime(records[record_id].time_actual) + ' Hrs')
         .replace(/@wasted_time@/g, toTime(records[record_id].time_wasted) + ' Hrs')
