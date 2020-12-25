@@ -369,6 +369,8 @@ function record()
     if(T[2].delta>0)T[2].prevtime=T[2].prevtime-T[2].delta;
     document.getElementById('record').style.background='blue';    //Color introduced so user can realise that the timer is running
     document.getElementById('record').style.color=' white';
+
+    
   }
   else{        //Average time counter turned off 
     T[2].delta = new Date().getTime() - T[2].prevtime;
@@ -378,12 +380,15 @@ function record()
 
 function rst()
 {
+  document.getElementById('record').style.color = "pink";
+  document.getElementById('record').style.backgroundColor = "purple";
+
+  
   document.getElementById('prb_count').innerHTML="Problems Count: 0";
   document.getElementById('Average time').innerHTML="Average time/problem: 0 mins";
   isrunningAverage =false;
   T[2].delta =0;
   runningAverage =0;
-  document.getElementById('record').style.background='white';
   if(pop_min.style.display==="block"||pop_pls.style.display==="block"||pop_zero_prb.style.display==="block"){
     pop_min.style.display="none";
     pop_pls.style.display="none";

@@ -331,8 +331,8 @@ button {
 }
 
 #record:hover{
-  background-color: white;
-  color: rgb(102, 41, 102);
+  background-color: white !important;
+  color: rgb(102, 41, 102) !important;
 }
 
 
