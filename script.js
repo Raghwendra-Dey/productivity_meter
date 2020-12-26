@@ -211,11 +211,13 @@ function prb_plus()
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
   if(isrunningAverage)
   {updateAverage(cnt);}
-
+  
   //for display of pop-up messgae
   if(pop_min.style.display==="block"){pop_min.style.display="none";}
   if(pop_zero_prb.style.display==="block"){pop_zero_prb.style.display="none";}
   if(pop_rst.style.display==="block"){pop_rst.style.display="none";}
+  pop_pls.style.opacity=1;
+  pop_pls.style.display="block";
   if(pop_pls.style.opacity!=0 ){
     clearInterval(intervalID);
     window.clearTimeout(ID);
@@ -228,9 +230,7 @@ function prb_plus()
       clearInterval(intervalID);
       window.clearTimeout(ID);
     }
-  pop_pls.style.opacity=1;
-  pop_pls.style.display="block";
-
+  
   //setting a timer to call the function for automatic fade off after 3.5sec
   ID=window.setTimeout(fade_out_plus,3500);
    }
@@ -311,6 +311,8 @@ function prb_minus()
     pop_pls.style.display="none";
     pop_rst.style.display="none";
     }
+    pop_min.style.opacity=1;
+    pop_min.style.display="block";
     if(pop_min.style.opacity!=0 ){
       clearInterval(intervalIDm);
       window.clearTimeout(IDm);
@@ -323,8 +325,7 @@ function prb_minus()
       clearInterval(intervalIDm);
       window.clearTimeout(IDm);
     }
-    pop_min.style.opacity=1;
-    pop_min.style.display="block";
+    
 
   //setting a timer to call the function for automatic fade off after 3.5sec when opacity was 0
     IDm=window.setTimeout(fade_out_minus,3500);
@@ -337,6 +338,8 @@ function prb_minus()
     if(pop_min.style.display==="block"){pop_min.style.display="none";}
     if(pop_pls.style.display==="block"){pop_pls.style.display="none";}
     if(pop_rst.style.display==="block"){pop_rst.style.display="none";}
+    pop_zero_prb.style.opacity=1;
+    pop_zero_prb.style.display="block";
     if(pop_zero_prb.style.opacity!=0 )
     {
       clearInterval(intervalID_f);
@@ -351,8 +354,7 @@ function prb_minus()
       clearInterval(intervalID_f);
       window.clearTimeout(ID_f);
       }
-      pop_zero_prb.style.opacity=1;
-      pop_zero_prb.style.display="block";
+     
 
   //setting a timer to call the function for automatic fade off after 3.5sec when opacity was 0
       ID_f=window.setTimeout(fade_zero_prb,3500);
@@ -389,6 +391,9 @@ function rst()
     pop_pls.style.display="none";
     pop_zero_prb.style.display="none";
     }
+    pop_rst.style.opacity=1;
+    pop_rst.style.display="block";
+
   if(pop_rst.style.opacity!=0 ){
     clearInterval(intervalID_rst);
     window.clearTimeout(ID_rst);
@@ -402,9 +407,7 @@ function rst()
       clearInterval(intervalID_rst);
       window.clearTimeout(ID_rst);
     }
-    pop_rst.style.opacity=1;
-    pop_rst.style.display="block";
-
+    
   //setting a timer to call the function for automatic fade off after 2.5sec when opacity was 0
     ID_rst=window.setTimeout(fade_pop_rst,2500);
   }
