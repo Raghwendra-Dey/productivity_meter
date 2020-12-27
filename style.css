@@ -330,10 +330,6 @@ button {
   background-color: rgb(102, 41, 102);
 }
 
-#record:hover{
-  background-color: white !important;
-  color: rgb(102, 41, 102) !important;
-}
 
 
 /* Todo List */
