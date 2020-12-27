@@ -72,7 +72,7 @@ else{ // Loaded timer from saved ones
   })
   
   document.getElementById("confirmNo").addEventListener("click",() => {
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
   })
   
   document.getElementById("confirmYes").addEventListener("click",() => {
@@ -580,7 +580,12 @@ function save(){
   }
 
   new_records.last_save_time = date.toString();
-  new_records.name = document.getElementById("nameRecord").value === "" ? date.toDateString() + "  " + date.getHours() + ":" + date.getMinutes() : document.getElementById("nameRecord").value;
+  new_records.name = 
+    document.getElementById("nameRecord").value === "" 
+    ? 
+    date.toDateString() + "  " + date.toLocaleTimeString() 
+    : 
+    document.getElementById("nameRecord").value;
   new_records.time_devoted = T[0].difference !== undefined ? T[0].difference : 0;
   new_records.time_actual = T[1].difference !== undefined ? T[1].difference : 0;
   new_records.time_wasted = new_records.time_devoted - new_records.time_actual;
@@ -607,7 +612,7 @@ function save(){
   records[new_records.id] = new_records;
   localStorage.setItem("records",JSON.stringify(records));
   toggleConfirm("none")
-  window.location.href = "/history.html#" + new_records.id;
+  window.location.href = "./history.html#record" + new_records.id;
 }
 
 function save_click(){
