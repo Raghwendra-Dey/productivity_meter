@@ -353,13 +353,13 @@ function prb_minus() {
 }
 
 function record() {
-  if (document.getElementById('record').style.background == "blue") {
-    document.getElementById('record').style.background = 'purple';    //Color introduced so user can realise that the timer is running
-    document.getElementById('record').style.color = ' pink';
+  if (document.querySelector('#record').style.backgroundColor == "blue") {
+    document.querySelector('#record').style.backgroundColor = 'purple';    //Color introduced so user can realise that the timer is running
+    document.querySelector('#record').style.color = ' pink';
   }
   else{
-    document.getElementById('record').style.background = 'blue';    //Color introduced so user can realise that the timer is running
-    document.getElementById('record').style.color = ' white';
+    document.querySelector('#record').style.backgroundColor = 'blue';    //Color introduced so user can realise that the timer is running
+    document.querySelector('#record').style.color = ' white';
       }
       
   if (!isrunningAverage) {        //Averagetime counter is turned on we update previous timestamp,along with the difference from previous session"
