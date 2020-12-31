@@ -1,7 +1,20 @@
 const todo_list=document.getElementById('todo_list');
 var i=0;
 
-function addTask() {  // This function is called when Add button in todo list is clicked
+if(loadedTimer === null || records[loadedTimer] === undefined){ // New timer i.e. not a loaded from saved ones or record cannot be found
+}
+else{ // Loaded timer from saved ones
+    for(let todo of records[loadedTimer].todos){
+        let taskObject = addTask(todo.name);
+        console.log(taskObject);
+        if(todo.completed){
+            doneTask(taskObject.name)
+            taskObject.checkbox.setAttribute("checked",true)
+        }
+    }
+}
+
+function addTask(value="") {  // This function is called when Add button in todo list is clicked
     
     //Create a container div to contain controls for i-th task
     //The controls will be created dynamically here
@@ -12,9 +25,10 @@ function addTask() {  // This function is called when Add button in todo list is
     const taskName=document.createElement('input');
     taskName.setAttribute('type','text');
     taskName.setAttribute('placeholder','Enter TaskName');
+    taskName.setAttribute('class','taskName');
     taskName.setAttribute('id','taskName'+String(i));
-
-    taskName.id = "textName";
+    taskName.value = value;
+    taskName.id = "textName"+String(i);
 
     //Add checkbox to container and call doneTask() when selected
     const doneCheck=document.createElement('input');
@@ -47,6 +61,8 @@ function addTask() {  // This function is called when Add button in todo list is
 
     todo_list.appendChild(newTask);
     i++;
+    let returnObject = {task:newTask,name:taskName,delButton:deleteButton,checkbox:doneCheck};
+    return(returnObject);
 }
 
 function doneTask(elementTask) {
