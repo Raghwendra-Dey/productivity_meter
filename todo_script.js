@@ -14,6 +14,8 @@ function addTask() {  // This function is called when Add button in todo list is
     taskName.setAttribute('placeholder','Enter TaskName');
     taskName.setAttribute('id','taskName'+String(i));
 
+    taskName.id = "textName";
+
     //Add checkbox to container and call doneTask() when selected
     const doneCheck=document.createElement('input');
     doneCheck.setAttribute('type','checkbox');
@@ -26,6 +28,8 @@ function addTask() {  // This function is called when Add button in todo list is
             reviveTask(taskName);
         }
     });
+
+    doneCheck.id = "checkButton";
     
     //Create a delete button and call deleteTask() when clicked
     const deleteButton=document.createElement('input');
@@ -35,6 +39,7 @@ function addTask() {  // This function is called when Add button in todo list is
     deleteButton.addEventListener('click',function () {
         deleteTask(newTask);
     });
+    deleteButton.id = "deleteButton";
 
     newTask.appendChild(doneCheck);
     newTask.appendChild(taskName);
