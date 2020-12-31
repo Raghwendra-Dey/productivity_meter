@@ -292,24 +292,22 @@ function prb_plus()
    }
 }
 
-function fade_out_plus(){
+function fade_out_plus() {
   // introducing a function to reduce opacity by 0.1 with every 100ms.
-intervalID=setInterval(function()
-                          {
-                            if(pop_pls.style.opacity>0)
-                              {
-                                if(pop_pls.style.opacity==0.1)
-                                {
-                                  pop_pls.style.opacity=pop_pls.style.opacity-0.1;
-                                  pop_pls.style.display="none";
-                                }
-                                else{pop_pls.style.opacity=pop_pls.style.opacity-0.1;}
-//                                 console.log(pop_pls.style.opacity);
-                               }
-                                    
-                            else {clearInterval(intervalID);}
-                          },100);
+  intervalID = setInterval(function () {
+    if (pop_pls.style.opacity > 0) {
+      if (pop_pls.style.opacity == 0.1) {
+        pop_pls.style.opacity = pop_pls.style.opacity - 0.1;
+        pop_pls.style.display = "none";
+      }
+      else { pop_pls.style.opacity = pop_pls.style.opacity - 0.1; }
+      //                                 console.log(pop_pls.style.opacity);
+    }
+
+    else { clearInterval(intervalID); }
+  }, 100);
 }
+
 
 //updating average when plus or minus  button is pressed
   function updateAverage(cnt, isInit = false){
@@ -460,7 +458,7 @@ function rst() {
   isrunningAverage = false;
   T[2].delta = 0;
   runningAverage = 0;
- if(pop_min.style.display==="block"||pop_pls.style.display==="block"||pop_zero_prb.style.display==="block"){
+  if(pop_min.style.display==="block"||pop_pls.style.display==="block"||pop_zero_prb.style.display==="block"){
     pop_min.style.display="none";
     pop_pls.style.display="none";
     pop_zero_prb.style.display="none";
@@ -487,25 +485,26 @@ function rst() {
   }
  
 }
-//function for the fading off of pop up messgae(for -1)
-function fade_out_minus(){
-  intervalIDm=setInterval(function()
-                          {
-                            
-                           if(pop_min.style.opacity>0)
-                              {
-                                if(pop_min.style.opacity==0.1){
-                                  pop_min.style.opacity=pop_min.style.opacity-0.1;
-                                 pop_min.style.display="none";
-                                }
-                                else{pop_min.style.opacity=pop_min.style.opacity-0.1;
-                                }
-                               }
-                                    
-                            else {clearInterval(intervalIDm);
 
-                            }
-                          },100);
+//function for the fading off of pop up messgae(for -1)
+function fade_out_minus() {
+  intervalIDm = setInterval(function () {
+
+    if (pop_min.style.opacity > 0) {
+      if (pop_min.style.opacity == 0.1) {
+        pop_min.style.opacity = pop_min.style.opacity - 0.1;
+        pop_min.style.display = "none";
+      }
+      else {
+        pop_min.style.opacity = pop_min.style.opacity - 0.1;
+      }
+    }
+
+    else {
+      clearInterval(intervalIDm);
+
+    }
+  }, 100);
 }
 //funtion to be called when reset button is clicked 
 
