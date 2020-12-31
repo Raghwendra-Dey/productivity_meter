@@ -397,7 +397,7 @@ function rst()
   isrunningAverage =false;
   T[2].delta =0;
   runningAverage =0;
-  document.getElementById('record').style.background='white';
+ 
   if(pop_min.style.display==="block"||pop_pls.style.display==="block"||pop_zero_prb.style.display==="block"){
     pop_min.style.display="none";
     pop_pls.style.display="none";
