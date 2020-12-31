@@ -320,8 +320,8 @@ function fade_out_plus() {
     Totaltime = runningAverage * (cnt - 1);
     if(isInit == false){
       Totaltime += temp;
+      runningAverage = Totaltime / (cnt);
     }
-    runningAverage = Totaltime / (cnt);
     T[2].prevtime = timeNow;
     // seconds
     if (runningAverage > 1000) {

@@ -28,12 +28,12 @@ function addTask(value="") {  // This function is called when Add button in todo
     taskName.setAttribute('class','taskName');
     taskName.setAttribute('id','taskName'+String(i));
     taskName.value = value;
-    taskName.id = "textName"+String(i);
-
+    
     //Add checkbox to container and call doneTask() when selected
     const doneCheck=document.createElement('input');
     doneCheck.setAttribute('type','checkbox');
     doneCheck.setAttribute('id','doneCheck'+String(i));
+    doneCheck.setAttribute('class','checkButton');
     doneCheck.addEventListener('change',function () {
         if(doneCheck.checked){
             doneTask(taskName);
@@ -42,18 +42,16 @@ function addTask(value="") {  // This function is called when Add button in todo
             reviveTask(taskName);
         }
     });
-
-    doneCheck.id = "checkButton";
     
     //Create a delete button and call deleteTask() when clicked
     const deleteButton=document.createElement('input');
     deleteButton.setAttribute('type','button');
     deleteButton.setAttribute('value','X');
+    deleteButton.setAttribute('class','deleteButton');
     deleteButton.setAttribute('id','deleteButton'+String(i));
     deleteButton.addEventListener('click',function () {
         deleteTask(newTask);
     });
-    deleteButton.id = "deleteButton";
 
     newTask.appendChild(doneCheck);
     newTask.appendChild(taskName);
