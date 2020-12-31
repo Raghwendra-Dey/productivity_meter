@@ -364,16 +364,25 @@ function prb_minus()
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
 }
 
-function record()
-{
-  if(!isrunningAverage){        //Averagetime counter is turned on we update previous timestamp,along with the difference from previous session"
-    T[2].prevtime= new Date().getTime();
-    if(T[2].delta>0)T[2].prevtime=T[2].prevtime-T[2].delta;
-    document.getElementById('record').style.background='blue';    //Color introduced so user can realise that the timer is running
+function record() {
+  if (document.querySelector('#record').style.backgroundColor == "blue") {
+    document.querySelector('#record').style.backgroundColor = 'purple';    //Color introduced so user can realise that the timer is running
+    document.querySelector('#record').style.color = ' pink';
   }
-  else{        //Average time counter turned off 
+  else{
+    document.querySelector('#record').style.backgroundColor = 'blue';    //Color introduced so user can realise that the timer is running
+    document.querySelector('#record').style.color = ' white';
+      }
+      
+  if (!isrunningAverage) {        //Averagetime counter is turned on we update previous timestamp,along with the difference from previous session"
+    T[2].prevtime = new Date().getTime();
+    if (T[2].delta > 0) T[2].prevtime = T[2].prevtime - T[2].delta;
+    
+
+
+  }
+  else {        //Average time counter turned off 
     T[2].delta = new Date().getTime() - T[2].prevtime;
-    document.getElementById('record').style.background='white';
   }
   isrunningAverage ^= true;    //switching the bool variable to indicate whether timer is running or not
 }
