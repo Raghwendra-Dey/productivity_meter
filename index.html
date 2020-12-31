@@ -23,11 +23,21 @@
 	<!--Internal CSS-->
 	<link href="./style.css" rel="stylesheet">
 	<link href="./style_pop.css" rel="stylesheet">
+	<link href="./confirm.css" rel="stylesheet">
 
 </head>
 
 <body>
+
 <section id="title">
+    <div id="backDrop" style="display: none;"></div>
+
+    <div id="confirmation" style="display: none;">
+		<div id="confirmMatter">Matter goes here:</div>
+        <button class="btn btn-success btn-lg" id="confirmYes">Button Info goes here</button>
+        <button class="btn btn-danger btn-lg" id="confirmNo">Button Info goes here</button>
+	</div>
+	
     <div class="navigation">
 
       <!-- Nav Bar -->
@@ -42,11 +52,14 @@
 
           <ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-			  <a class="nav-link" href="https://github.com/Raghwendra-Dey/productivity_meter/blob/master/README.md#usage"><i class="fas fa-info-circle"></i></i></a>
+			  <a class="nav-link" href="https://github.com/Raghwendra-Dey/productivity_meter/blob/master/README.md#usage"><i class="fas fa-info-circle nav-icon"></i></a>
             </li>
 			<li class="nav-item">
-			  <a class="nav-link" href="https://github.com/Raghwendra-Dey/productivity_meter"><i class="fab fa-github "></i></a>
-            </li>
+			  <a class="nav-link" href="https://github.com/Raghwendra-Dey/productivity_meter"><i class="fab fa-github nav-icon"></i></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="./history.html"><i class="fas fa-history nav-icon"></i></a>
+			</li>
 			</ul> 
         </div>
       </nav>
@@ -133,6 +146,12 @@
 		<p id="prb_count">Problems Count: 0</p>
 		<p id="Average time">Average time/problem :0 mins</p>
 	</div>
+
+	<!-- Saving records Container -->
+	<div class="text-center">
+		<button type="button" class="btn btn-success btn-lg" onclick="save_click()"> Save and Reset All </button>
+	</div>
+
 	<div class='active' id="plus_modal">
 			<span class="cross1" onclick="vanish_plus()" ><i class="far fa-times-circle"></i></span>
 			<span class="icon-up"><i class="far fa-thumbs-up"></i></span>
@@ -167,10 +186,10 @@
 	</footer>
 
 	<!--Internal Script.js-->
-	<script src="./script.js"></script>
+	<!-- <script src="./script.js"></script> -->
 
 	<!--Script for todolist functions-->
-	<script src="./todo_script.js"></script>
+	<!-- <script src="./todo_script.js"></script> -->
 
 	<!-- jQuery and Bootstrap Bundle (includes Popper) -->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -179,6 +198,15 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
 		</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+		</script>
+
+	<!--Internal Script.js-->
+	<script src="./script.js"></script>
+
+	<!--Script for todolist functions-->
+	<script src="./todo_script.js"></script>
 
 </body>
 
