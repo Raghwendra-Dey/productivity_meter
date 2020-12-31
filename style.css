@@ -58,11 +58,7 @@ body {
   transform: translateY(-4px);  
 }
 
-.fa-github{
-  font-size: 2rem;
-}
-
-.fa-info-circle{
+.nav-icon{
   font-size: 2rem;
 }
 
@@ -164,9 +160,7 @@ body,
 button {
   font-family: "Courier";
 }
-body {
-  background-color: #0000fa;
-}
+
 #footer {
   text-align: center;
   color: #fff;
@@ -318,14 +312,22 @@ button {
 }
 
 /* Buttons */
-button,  .input{
+.btn1,  .input{
   transform: scale(0.9);
 }
 
-button:hover, .input{
+.btn1:hover, .input{
   transform: scale(1);
   opacity: 0.8;
 }
+
+#record{
+  color: pink;
+  background-color: rgb(102, 41, 102);
+}
+
+
+/* Todo List */
 
 #todo_container {
   width: 820px;
@@ -341,6 +343,47 @@ button:hover, .input{
 #todo_list{
   height: 200px;
   overflow-y: auto;
+}
+
+.deleteButton{
+  font-size: 1.2rem;
+  margin-left: -1.9rem;
+  background-color: white;
+  outline: none;
+  border: none;
+  font-weight: bolder;
+  color: rgb(95, 95, 95);
+}
+
+#deleteButton:hover{
+  color:red;
+}
+
+
+.taskName{
+  width: 30rem;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0.2rem;
+}
+
+.todoHeading{
+  width: 10rem;
+  font-size: 3rem;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  border-bottom: 4px solid limegreen;
+  border-bottom-style: ridge;
+  margin-bottom: -1rem;
+  padding-bottom: -1rem;
+}
+
+.checkButton{
+  width: 1.4rem;
+  height: 1.1rem;
+  border-radius: 0;
+  border: 0;
+  margin-right: 1%;
 }
 
 #prb_cntr {
@@ -366,25 +409,143 @@ button {
 }
 
 body {
-  background-color: #0000fa;
-}
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .timer {
+        width: 500px;
+        font-size: 70px;
+        background-color: black;
+        color: limegreen;
+        padding: 25px;
+        border-radius: 10px;
+    }
+    
+    .labels {
+        margin-top: -25px;
+        z-index: 2;
+        color: limegreen;
+        font-size: 12px;
+    }
+    
+    .hh {
+        margin-left: 45px;
+    }
+    
+    .mm {
+        margin-left: 80px;
+    }
+    
+    .ss {
+        margin-left: 70px;
+    }
+    
+    .cs {
+        margin-left: 45px;
+    }
+    
+    .controls {
+        margin-left: 150px;
+        margin-top: 30px;
+    }
+    
+    button {
+        box-shadow: 5px 5px 5px #888888;
+    }
+    
+    .watches {
+        text-align: center;
+    }
+    
+    .watch1 {
+        text-align: left;
+        display: inline-block;
+        width: 50%;
+    }
+    
+    .watch2 {
+        text-align: left;
+        display: inline-block;
+        width: 40%;
+    }
+    
+    .watch3 {
+        text-align: left;
+        display: inline-block;
+        width: 40%;
+    }
+    
+    .text {
+        color: #fff;
+        font-size: 3rem;
+    }
+    
+    .textbox {
+        font-size: 18px;
+    }
+    
+    #go {
+        background-color: limegreen;
+    }
+    
+    #stop {
+        background-color: red;
+        display: none;
+    }
+    
+    #clear {
+        background-color: yellow;
+        display: none;
+    }
+    
+    #plus {
+        background-color: limegreen;
+    }
+    
+    #minus {
+        background-color: red;
+    }
+    /* Buttons */
+    
+    button,
+    .input {
+        transform: scale(0.9);
+    }
+    
+    button:hover,
+    .input {
+        transform: scale(1);
+        opacity: 0.8;
+    }
 
-#footer {
-  text-align: center;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.712);
-  margin-top: 1.5rem;
-  padding: 1.5rem;
-  font-family: cursive;
-  letter-spacing: 3px;
-  font-size: large;
-}
-
-#footer a {
-  text-decoration: none;
-  cursor: pointer;
-  color: #fff;
-}
+    /* Todo List */
+    #todo_container {
+        width: 820px;
+        height: 410px;
+        font-size: 40px;
+        background-color: black;
+        color: limegreen;
+        padding: 10px 25px;
+        border-radius: 10px;
+        margin: 50px auto;
+        font-size: 0;
+    }
+    
+    #todo_list {
+        height: 200px;
+        overflow-y: auto;
+    }
+    
+    #taskInput {
+        height: 2rem;
+        font-size: 1.2rem;
+        width: 25rem;
+        font-family:Arial, Helvetica, sans-serif;
+        margin-bottom: 0.5rem;
+    }
+    
 
 #footer a:hover {
   color: pink;
