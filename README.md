@@ -22,7 +22,9 @@ Please join the [gitter channel](https://gitter.im/productivity_meter/community)
 If you would like to contribute to the designing and UI aspects of the project, then please join [this chat room](https://gitter.im/productivity_meter/UI_works) to take part in its discussions.<br><br>
 Thanks to [this](https://github.com/nelsonic/stopwatch) repo, which i used as the baseline and modified upon to serve my required purpose.
 
-## Contributors
+## Contributors 🌟
+
+Thanks goes to these wonderful people ✨✨:
 
 <a href="https://github.com/Raghwendra-Dey/productivity_meter/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Raghwendra-Dey/productivity_meter" />
