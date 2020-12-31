@@ -5,6 +5,11 @@ html{
 body{
     margin: 0;
     padding: 0;
+    min-height: calc(100vh);
+}
+
+#records{
+    color: whitesmoke;
 }
 
 .record{
@@ -12,10 +17,11 @@ body{
     position: relative;
     z-index : 1;
     margin: 20px;
-    padding: 10px;
 }
 
 .record .recordName{
+    font-size: 26px;
+    font-weight: bold;
     display: inline-block;
     margin: 10px;
     vertical-align: middle;
@@ -31,10 +37,6 @@ body{
 
 .taskName{
     display: inline;
-}
-
-.record .toggler{
-    padding: 0 5px;
 }
 
 #backDrop{
@@ -74,6 +76,12 @@ body{
     z-index: 10;
 }
 
+.selected{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(155, 155, 155, 0.356);
+}
+
 /* UI STYLING */
 #header{
     background-color: #071b3a;
@@ -106,12 +114,7 @@ body{
 }
 
 .feature{
-    padding: 8px 16px;
-    font-size: 16px;
     background-color: rgb(86, 165, 230);
-    border: none;
-    border-radius: 6px;
-    color: white;
 }
 
 #delete{
@@ -125,24 +128,25 @@ body{
 
 .record{
     border: none;
-    background-color: rgb(240, 220, 206);
+    background-color: rgba(93, 93, 93, 0.486);
+    color: white;
     border-radius: 10px;
     margin: 10px 0;
 }
 
 .tasksBlock{
-    background-color: rgb(245, 234, 227);
+    background-color: rgba(126, 126, 126, 0.486);
     padding: 10px;
     border-radius: 10px;
 }
 
-.close{
+.closeSelect{
     float: right;
 }
 
 .recordDetails{
     line-height: 30px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .toggler{
@@ -150,6 +154,8 @@ body{
     width: 24px;
     border-radius: 400px;
     border: 1px solid black;
+    box-sizing: content-box;
+    padding-bottom: 5px;
 }
 .toggler:focus{
     outline: none;
@@ -194,7 +200,7 @@ input[type=checkbox]:disabled + label:before {
 
 input[type=checkbox]:checked:disabled + label:before {
     transform: scale(1);
-    background-color: #bfb;
+    background-color: rgb(104, 146, 104);
     border-color: #bfb;
 }
 
