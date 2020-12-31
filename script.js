@@ -259,35 +259,37 @@ function clearTimer(id) {
 
 // counter part
 //function to be called when +1 is clicked 
-function prb_plus() {
+function prb_plus()
+{
   //for increment in the number of problem solved
   var x = document.getElementById('prb_count').innerHTML.split(": ");
-  var cnt = Number(x[x.length - 1]) + 1;
-  document.getElementById('prb_count').innerHTML = "Problems Count: " + cnt.toString();
-  if (isrunningAverage) { updateAverage(cnt); }
-
+  var cnt=Number(x[x.length-1])+1;
+  document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
+  if(isrunningAverage)
+  {updateAverage(cnt);}
+  
   //for display of pop-up messgae
-  if (pop_min.style.display === "block") { pop_min.style.display = "none"; }
-  if (pop_zero_prb.style.display === "block") { pop_zero_prb.style.display = "none"; }
-  if (pop_rst.style.display === "block") { pop_rst.style.display = "none"; }
-  if (pop_pls.style.opacity != 0) {
+  if(pop_min.style.display==="block"){pop_min.style.display="none";}
+  if(pop_zero_prb.style.display==="block"){pop_zero_prb.style.display="none";}
+  if(pop_rst.style.display==="block"){pop_rst.style.display="none";}
+  pop_pls.style.opacity=1;
+  pop_pls.style.display="block";
+  if(pop_pls.style.opacity!=0 ){
     clearInterval(intervalID);
     window.clearTimeout(ID);
-    pop_pls.style.opacity = 1;
-    ID = window.setTimeout(fade_out_plus, 5000);
-
+    pop_pls.style.opacity=1;
+    ID=window.setTimeout(fade_out_plus,5000);
+    
   }
-  else {
-    if (intervalID !== undefined) {
+  else{
+    if(intervalID!==undefined){
       clearInterval(intervalID);
       window.clearTimeout(ID);
     }
-    pop_pls.style.opacity = 1;
-    pop_pls.style.display = "block";
-
-    //setting a timer to call the function for automatic fade off after 3.5sec
-    ID = window.setTimeout(fade_out_plus, 3500);
-  }
+  
+  //setting a timer to call the function for automatic fade off after 3.5sec
+  ID=window.setTimeout(fade_out_plus,3500);
+   }
 }
 
 function fade_out_plus() {
@@ -358,66 +360,72 @@ else{ // Loaded timer from saved ones
 }
 
 //function t be called when -1 is clicked
-function prb_minus() {
+function prb_minus()
+{
   //decreasing the problem count 
   var x = document.getElementById('prb_count').innerHTML.split(": ");
-  var cnt = Number(x[x.length - 1]) - 1;
-
+  var cnt=Number(x[x.length-1])-1;
+  
   //for pop up messgae to appear when the problem count is decreased
-  if (cnt >= 0) {
-    if (pop_pls.style.display === "block" || pop_rst.style.display === "block") {
-      pop_pls.style.display = "none";
-      pop_rst.style.display = "none";
+  if(cnt>=0)
+  {
+    if(pop_pls.style.display==="block"||pop_rst.style.display==="block")
+    {
+    pop_pls.style.display="none";
+    pop_rst.style.display="none";
     }
-    if (pop_min.style.opacity != 0) {
+    pop_min.style.opacity=1;
+    pop_min.style.display="block";
+    if(pop_min.style.opacity!=0 ){
       clearInterval(intervalIDm);
       window.clearTimeout(IDm);
-      pop_min.style.opacity = 1;
-      //setting a timer to call the function for automatic fade off after 4sec when opacity was non-0
-      IDm = window.setTimeout(fade_out_minus, 4000);
+      pop_min.style.opacity=1;
+       //setting a timer to call the function for automatic fade off after 4sec when opacity was non-0
+      IDm=window.setTimeout(fade_out_minus,4000);
     }
-    else {
-      if (intervalIDm !== undefined) {
-        clearInterval(intervalIDm);
-        window.clearTimeout(IDm);
-      }
-      pop_min.style.opacity = 1;
-      pop_min.style.display = "block";
+  else{
+    if(intervalIDm!==undefined){
+      clearInterval(intervalIDm);
+      window.clearTimeout(IDm);
+    }
+    
 
-      //setting a timer to call the function for automatic fade off after 3.5sec when opacity was 0
-      IDm = window.setTimeout(fade_out_minus, 3500);
-    }
+  //setting a timer to call the function for automatic fade off after 3.5sec when opacity was 0
+    IDm=window.setTimeout(fade_out_minus,3500);
+   }
   }
 
   //for pop up message to appear when problem count is zero and
   //the user is still clicking -1
-  else {
-    if (pop_min.style.display === "block") { pop_min.style.display = "none"; }
-    if (pop_pls.style.display === "block") { pop_pls.style.display = "none"; }
-    if (pop_rst.style.display === "block") { pop_rst.style.display = "none"; }
-    if (pop_zero_prb.style.opacity != 0) {
+  else{
+    if(pop_min.style.display==="block"){pop_min.style.display="none";}
+    if(pop_pls.style.display==="block"){pop_pls.style.display="none";}
+    if(pop_rst.style.display==="block"){pop_rst.style.display="none";}
+    pop_zero_prb.style.opacity=1;
+    pop_zero_prb.style.display="block";
+    if(pop_zero_prb.style.opacity!=0 )
+    {
       clearInterval(intervalID_f);
       window.clearTimeout(ID_f);
-      pop_zero_prb.style.opacity = 1;
+      pop_zero_prb.style.opacity=1;
       //setting a timer to call the function for automatic fade off after 4sec when opacity was non-zero
-      ID_f = window.setTimeout(fade_zero_prb, 4000);
+      ID_f=window.setTimeout(fade_zero_prb,4000);
     }
-    else {
-      if (intervalID_f !== undefined) {
-        clearInterval(intervalID_f);
-        window.clearTimeout(ID_f);
+    else
+    {
+      if(intervalID_f!==undefined){
+      clearInterval(intervalID_f);
+      window.clearTimeout(ID_f);
       }
-      pop_zero_prb.style.opacity = 1;
-      pop_zero_prb.style.display = "block";
+     
 
-      //setting a timer to call the function for automatic fade off after 3.5sec when opacity was 0
-      ID_f = window.setTimeout(fade_zero_prb, 3500);
+  //setting a timer to call the function for automatic fade off after 3.5sec when opacity was 0
+      ID_f=window.setTimeout(fade_zero_prb,3500);
     }
   }
-  if (cnt < 0) cnt = 0;
-  document.getElementById('prb_count').innerHTML = "Problems Count: " + cnt.toString();
+  if(cnt<0) cnt=0;
+  document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
 }
-
 function record() {
   if (document.querySelector('#record').style.backgroundColor == "blue") {
     document.querySelector('#record').style.backgroundColor = 'purple';    //Color introduced so user can realise that the timer is running
@@ -450,30 +458,32 @@ function rst() {
   isrunningAverage = false;
   T[2].delta = 0;
   runningAverage = 0;
-  if (pop_min.style.display === "block" || pop_pls.style.display === "block" || pop_zero_prb.style.display === "block") {
-    pop_min.style.display = "none";
-    pop_pls.style.display = "none";
-    pop_zero_prb.style.display = "none";
-  }
-  if (pop_rst.style.opacity != 0) {
+  if(pop_min.style.display==="block"||pop_pls.style.display==="block"||pop_zero_prb.style.display==="block"){
+    pop_min.style.display="none";
+    pop_pls.style.display="none";
+    pop_zero_prb.style.display="none";
+    }
+    pop_rst.style.opacity=1;
+    pop_rst.style.display="block";
+
+  if(pop_rst.style.opacity!=0 ){
     clearInterval(intervalID_rst);
     window.clearTimeout(ID_rst);
-    pop_rst.style.opacity = 1;
-    //setting a timer to call the function for automatic fade off after 3sec when opacity was non-0
-    ID_rst = window.setTimeout(fade_pop_rst, 3000);
+    pop_rst.style.opacity=1;
+     //setting a timer to call the function for automatic fade off after 3sec when opacity was non-0
+    ID_rst=window.setTimeout(fade_pop_rst,3000);
   }
-  else {
-    if (intervalID_rst !== undefined) {
+  else
+  {
+    if(intervalID_rst!==undefined){
       clearInterval(intervalID_rst);
       window.clearTimeout(ID_rst);
     }
-    pop_rst.style.opacity = 1;
-    pop_rst.style.display = "block";
-
-    //setting a timer to call the function for automatic fade off after 2.5sec when opacity was 0
-    ID_rst = window.setTimeout(fade_pop_rst, 2500);
+    
+  //setting a timer to call the function for automatic fade off after 2.5sec when opacity was 0
+    ID_rst=window.setTimeout(fade_pop_rst,2500);
   }
-
+ 
 }
 
 //function for the fading off of pop up messgae(for -1)
