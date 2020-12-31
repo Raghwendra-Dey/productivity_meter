@@ -380,6 +380,9 @@ function record()
 
 function rst()
 {
+  document.getElementById('record').style.color = "pink";
+  document.getElementById('record').style.backgroundColor = "purple";
+
   document.getElementById('prb_count').innerHTML="Problems Count: 0";
   document.getElementById('Average time').innerHTML="Average time/problem: 0 mins";
   isrunningAverage =false;
