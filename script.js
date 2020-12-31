@@ -243,6 +243,7 @@ function prb_plus() {
   var cnt = Number(x[x.length - 1]) + 1;
   document.getElementById('prb_count').innerHTML = "Problems Count: " + cnt.toString();
   if (isrunningAverage) { 
+    dequePrevTime.addRear(T[2].prevtime);
     timeNow = new Date().getTime();
     temp =timeNow-T[2].prevtime;  //Updating the runningAverage using "current_timestamp - previous timestamp(T[2].prevtime)"
     Totaltime = runningAverage * (cnt-1);   
@@ -250,7 +251,6 @@ function prb_plus() {
     runningAverage = Totaltime/(cnt);
     T[2].prevtime =timeNow;
     dequeAvgTime.addRear(runningAverage);
-    dequePrevTime.addRear(T[2].prevtime);
     updateAverage(cnt);
   }
 
