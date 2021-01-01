@@ -5,7 +5,9 @@ This is used for tracking how much time you are thinking you spend in problem so
 This does so by measuring the delta between the time spent minus the time wasted due to small small distractions. It uses two timers to do so.</br>
 Use it [here](https://raghwendra-dey.github.io/productivity_meter/).<br>
 ## App in Action:
-![App in Action](https://user-images.githubusercontent.com/45457947/101276377-2f3b3000-37d2-11eb-87a1-c487fe97981c.png)
+![App in Action](https://user-images.githubusercontent.com/60804824/102696331-8ff74d80-4253-11eb-84e4-add89e4f29f3.jpeg)
+![ll](https://user-images.githubusercontent.com/60804824/102696346-a7ced180-4253-11eb-98fc-b3c4fb0d9ca4.jpeg)
+
 ## Usage:
 > This App helped me a lot in my studies to keep track of my time wastage and making me aware of the real scenario of actual time utilization.<br>
 
@@ -16,7 +18,8 @@ The `difference` block shows the difference between the two timers, i.e. `Time D
 
 NOTE: It is recommended to use this in laptops only. This project is not made responsive so, could not expect to give a good experience while using in mobile phones. If you wish to make it responsive then do shoot me a PR.<br><br>
 ## Contributing
-* Clone the repo: `git clone https://github.com/Raghwendra-Dey/productivity_meter.git`
+* Fork this repo.
+* Clone your forked repo: `git clone https://github.com/"YOUR_USER_NAME"/productivity_meter.git`
 * Open the repo in your local machine and open the `index.html` to run the app in your browser.</br> </br>
 Please join the [gitter channel](https://gitter.im/productivity_meter/community) to interact and discuss with other contributors, about the project. You are welcomed to give your inputs to improve this project. If you found a bug, or want to make a feature request, please go ahead and [raise an issue](https://github.com/Raghwendra-Dey/productivity_meter/issues/new).</br>
 If you would like to contribute to the designing and UI aspects of the project, then please join [this chat room](https://gitter.im/productivity_meter/UI_works) to take part in its discussions.<br><br>
