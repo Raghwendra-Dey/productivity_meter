@@ -406,10 +406,11 @@ function prb_minus()
   if(cnt>=0)
   {
     if (isrunningAverage) { 
+      T[2].prevtime=dequePrevTime.items[dequePrevTime.size()-1];
       dequeAvgTime.removeRear();
       dequePrevTime.removeRear();
       runningAverage = dequeAvgTime.items[dequeAvgTime.size()-1];
-      T[2].prevtime=dequePrevTime.items[dequePrevTime.size()-1];
+      
     }
     if(pop_pls.style.display==="block"||pop_rst.style.display==="block")
     {
