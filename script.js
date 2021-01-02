@@ -118,6 +118,9 @@ else{ // Loaded timer from saved ones
 
 // isInit is an optional argument to this function that tells whether the timer is being loaded first or not, by default it is false
 function displayTimer(id, isInit = false) {
+runningAverage=0;  
+var breakDur=20;
+function displayTimer(id) {
   // initilized all local variables:
   var hours = '00', minutes = '00',
     miliseconds = 0, seconds = '00',
@@ -707,3 +710,13 @@ function NotificationSound() {
   'assets/beep.mp3');
   audio.play();
   }
+
+function checker(x){
+    
+    breakDur=x;
+    if((isNaN(x))){
+      console.log("Entered value should be a number")
+    
+    }
+    
+}
