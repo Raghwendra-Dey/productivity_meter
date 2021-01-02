@@ -1,3 +1,36 @@
+class Deque {
+
+  constructor() {
+    this.items = [];
+    this.max_capacity=100;
+  }
+
+  isEmpty() {
+    return (this.items.length==0);
+  }
+
+  addFront(item) {
+    this.items.unshift(item);
+  }
+
+  addRear(item) {
+    if(this.size()==this.max_capacity)
+    this.removeFront();
+    this.items.push(item);
+  }
+
+  removeFront() {
+    return this.items.shift();
+  }
+
+  removeRear() {
+    return this.items.pop();
+  }
+
+  size() {
+    return this.items.length;
+  }
+}
 // timer part
 // global object
 //There are three timers including the average time counter
@@ -25,6 +58,9 @@ var pop_min = document.getElementById("minus_modal");
 var pop_pls = document.getElementById("plus_modal");
 var pop_zero_prb = document.getElementById("zero_prb");
 var pop_rst = document.getElementById("pop_rst");
+
+dequeAvgTime=new Deque(); //Stores runningAverage for each click
+dequePrevTime=new Deque(); //Store T[2].prevTime values for each click
 
 // Toggle visibility of confirmation
 function toggleConfirm(status){
@@ -265,9 +301,17 @@ function prb_plus()
   var x = document.getElementById('prb_count').innerHTML.split(": ");
   var cnt=Number(x[x.length-1])+1;
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
-  if(isrunningAverage)
-  {updateAverage(cnt);}
-  
+  if(isrunningAverage) {
+    dequePrevTime.addRear(T[2].prevtime);
+    timeNow = new Date().getTime();
+    temp =timeNow-T[2].prevtime;  //Updating the runningAverage using "current_timestamp - previous timestamp(T[2].prevtime)"
+    Totaltime = runningAverage * (cnt-1);   
+    Totaltime +=temp;
+    runningAverage = Totaltime/(cnt);
+    T[2].prevtime =timeNow;
+    dequeAvgTime.addRear(runningAverage);
+    updateAverage(cnt);
+  }  
   //for display of pop-up messgae
   if(pop_min.style.display==="block"){pop_min.style.display="none";}
   if(pop_zero_prb.style.display==="block"){pop_zero_prb.style.display="none";}
@@ -317,14 +361,6 @@ function fade_out_plus() {
     document.getElementById('Average time').innerHTML = "Average time/problem: 0 mins";
   }
   else {
-    timeNow = new Date().getTime();
-    temp = timeNow - T[2].prevtime;  //Updating the runningAverage using "current_timestamp - previous timestamp(T[2].prevtime)"
-    Totaltime = runningAverage * (cnt - 1);
-    if(isInit == false){
-      Totaltime += temp;
-      runningAverage = Totaltime / (cnt);
-    }
-    T[2].prevtime = timeNow;
     // seconds
     if (runningAverage > 1000) {
       seconds = Math.floor(runningAverage / 1000);
@@ -369,6 +405,13 @@ function prb_minus()
   //for pop up messgae to appear when the problem count is decreased
   if(cnt>=0)
   {
+    if (isrunningAverage) { 
+      T[2].prevtime=dequePrevTime.items[dequePrevTime.size()-1];
+      dequeAvgTime.removeRear();
+      dequePrevTime.removeRear();
+      runningAverage = dequeAvgTime.items[dequeAvgTime.size()-1];
+      
+    }
     if(pop_pls.style.display==="block"||pop_rst.style.display==="block")
     {
     pop_pls.style.display="none";
@@ -425,6 +468,7 @@ function prb_minus()
   }
   if(cnt<0) cnt=0;
   document.getElementById('prb_count').innerHTML="Problems Count: "+cnt.toString();
+  updateAverage(cnt);
 }
 function record() {
   if (document.querySelector('#record').style.backgroundColor == "blue") {
@@ -458,6 +502,8 @@ function rst() {
   isrunningAverage = false;
   T[2].delta = 0;
   runningAverage = 0;
+  dequePrevTime.items=[]; //Clearing the Deque
+  dequeAvgTime.items=[];
   if(pop_min.style.display==="block"||pop_pls.style.display==="block"||pop_zero_prb.style.display==="block"){
     pop_min.style.display="none";
     pop_pls.style.display="none";
