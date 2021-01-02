@@ -655,3 +655,9 @@ function save_click(){
   document.getElementById("confirmYes").addEventListener("click",save)
 
 }
+
+function NotificationSound() {
+  var audio = new Audio(
+  'assets/beep.mp3');
+  audio.play();
+  }
