@@ -704,6 +704,20 @@ function save_click(){
 
 // Quotes code
 
+// Array shuffler
+
+function shuffleArray(array) {
+
+  for (var i = array.length - 1; i > 0; i--) {
+    // Generate random number  
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
 let quotesArray = [
   "Welcome to the Productivity meter!!",
   "This is place where you can get motivated by various quotes.",
@@ -740,11 +754,29 @@ let quoteWriter = setInterval(() => {
     // Flushing if any remaining
     quoteHolder.innerHTML = quote.slice(0, 0)
     // Halving the empty string timepass
-    if (timepass > -stdTimePass/2) {
+    if (timepass > -stdTimePass / 2) {
       timepass--;
     }
     else {
-      quote = quotesArray[++index % quotesArray.length];
+
+      if (index == quotesArray.length - 1) {
+        index = 0;
+        prevQuote = quote;
+
+        // Shuffles the quotes array
+        quotesArray = shuffleArray(quotesArray);
+
+        // Also this is ensured that while shuffling 
+        // the last quote in prev array doesn't come to first place
+        while (prevQuote == quotesArray[0]) {
+          quotesArray = shuffleArray(quotesArray);
+        }
+
+      } else {
+        index++;
+      }
+
+      quote = quotesArray[index];
       len = qLength = quote.length;
       timepass = stdTimePass;
     }
