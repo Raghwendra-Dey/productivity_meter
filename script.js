@@ -471,24 +471,27 @@ function prb_minus()
   updateAverage(cnt);
 }
 function record() {
-  if (document.querySelector('#record').style.backgroundColor == "blue") {
+  if (document.querySelector('#record').style.backgroundColor == "salmon") {
     document.querySelector('#record').style.backgroundColor = 'purple';    //Color introduced so user can realise that the timer is running
     document.querySelector('#record').style.color = ' pink';
+    document.querySelector('#recordInfo').innerHTML = 'Record';
   }
   else{
-    document.querySelector('#record').style.backgroundColor = 'blue';    //Color introduced so user can realise that the timer is running
+    document.querySelector('#record').style.backgroundColor = 'salmon';    //Color introduced so user can realise that the timer is running
     document.querySelector('#record').style.color = ' white';
-      }
+    document.querySelector('#recordInfo').innerHTML = 'Pause';
+  }
       
   if (!isrunningAverage) {        //Averagetime counter is turned on we update previous timestamp,along with the difference from previous session"
     T[2].prevtime = new Date().getTime();
     if (T[2].delta > 0) T[2].prevtime = T[2].prevtime - T[2].delta;
-    
-
-
+    document.querySelector("#plusPrb").style.display = "unset";
+    document.querySelector("#minusPrb").style.display = "unset";
   }
   else {        //Average time counter turned off 
     T[2].delta = new Date().getTime() - T[2].prevtime;
+    document.querySelector("#plusPrb").style.display = "none";
+    document.querySelector("#minusPrb").style.display = "none";
   }
   isrunningAverage ^= true;    //switching the bool variable to indicate whether timer is running or not
 }
@@ -496,6 +499,10 @@ function record() {
 function rst() {
   document.getElementById('record').style.color = "pink";
   document.getElementById('record').style.backgroundColor = "purple";
+
+  document.querySelector("#plusPrb").style.display = "none";
+  document.querySelector("#minusPrb").style.display = "none";
+  document.querySelector('#recordInfo').innerHTML = 'Record';
 
   document.getElementById('prb_count').innerHTML = "Problems Count: 0";
   document.getElementById('Average time').innerHTML = "Average time/problem: 0 mins";
