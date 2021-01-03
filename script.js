@@ -701,3 +701,8 @@ function save_click(){
   document.getElementById("confirmYes").addEventListener("click",save)
 
 }
+
+function playSound() {
+  const audio = new Audio("assets/beep.mp3");
+  audio.play();
+}
