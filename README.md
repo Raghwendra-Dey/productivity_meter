@@ -24,3 +24,18 @@ NOTE: It is recommended to use this in laptops only. This project is not made re
 Please join the [gitter channel](https://gitter.im/productivity_meter/community) to interact and discuss with other contributors, about the project. You are welcomed to give your inputs to improve this project. If you found a bug, or want to make a feature request, please go ahead and [raise an issue](https://github.com/Raghwendra-Dey/productivity_meter/issues/new).</br>
 If you would like to contribute to the designing and UI aspects of the project, then please join [this chat room](https://gitter.im/productivity_meter/UI_works) to take part in its discussions.<br><br>
 Thanks to [this](https://github.com/nelsonic/stopwatch) repo, which i used as the baseline and modified upon to serve my required purpose.
+
+## Support
+
+:star:Star:star: this Repo.<br>
+If there are any issues with the [app](https://raghwendra-dey.github.io/productivity_meter/index.html), please raise [an issue](https://github.com/Raghwendra-Dey/productivity_meter/issues/new).<br>
+_Project made with love by Raghwendra Dey [`@Raghwendra-Dey`](https://github.com/Raghwendra-Dey)_
+
+
+## Contributors 🌟
+
+Thanks goes to these wonderful people ✨✨:
+
+<a href="https://github.com/Raghwendra-Dey/productivity_meter/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Raghwendra-Dey/productivity_meter" />
+</a>
