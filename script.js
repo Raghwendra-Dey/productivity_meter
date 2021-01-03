@@ -406,7 +406,7 @@ function prb_minus()
   if(cnt>=0)
   {
     if (isrunningAverage) { 
-      T[2].prevtime=dequePrevTime.items[dequePrevTime.size()-1];
+      T[2].prevtime=new Date().getTime();
       dequeAvgTime.removeRear();
       dequePrevTime.removeRear();
       runningAverage = dequeAvgTime.items[dequeAvgTime.size()-1];
