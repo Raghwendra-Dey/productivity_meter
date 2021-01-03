@@ -25,6 +25,13 @@ Please join the [gitter channel](https://gitter.im/productivity_meter/community)
 If you would like to contribute to the designing and UI aspects of the project, then please join [this chat room](https://gitter.im/productivity_meter/UI_works) to take part in its discussions.<br><br>
 Thanks to [this](https://github.com/nelsonic/stopwatch) repo, which i used as the baseline and modified upon to serve my required purpose.
 
+## Support
+
+:star:Star:star: this Repo.<br>
+If there are any issues with the [app](https://raghwendra-dey.github.io/productivity_meter/index.html), please raise [an issue](https://github.com/Raghwendra-Dey/productivity_meter/issues/new).<br>
+_Project made with love by Raghwendra Dey [`@Raghwendra-Dey`](https://github.com/Raghwendra-Dey)_
+
+
 ## Contributors 🌟
 
 Thanks goes to these wonderful people ✨✨:
