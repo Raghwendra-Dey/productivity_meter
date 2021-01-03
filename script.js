@@ -726,11 +726,11 @@ function shuffleArray(array) {
 }
 
 let quotesArray = [
-  "Welcome to the Productivity meter!!",
-  "This is place where you can get motivated by various quotes.",
-  "Enough intro, dive deep in our app",
-  "Do you know that you can save your timers and continue from there at any time?",
-  "Check it out by clicking the history button on the top right."
+  "You may delay, but time will not.",
+  "Lost time is never found again.",
+  "Until we can manage time, we can manage nothing else.",
+  "Productivity is always a result of intelligent planning.",
+  "Your mind is for having ideas, not holding them."
 ];
 
 let index = 0;
@@ -761,7 +761,7 @@ let quoteWriter = setInterval(() => {
     // Flushing if any remaining
     quoteHolder.innerHTML = quote.slice(0, 0)
     // Halving the empty string timepass
-    if (timepass > -stdTimePass / 2) {
+    if (timepass > -stdTimePass / 5) {
       timepass--;
     }
     else {
