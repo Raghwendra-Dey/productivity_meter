@@ -494,11 +494,11 @@ body {
         display: none;
     }
     
-    #plus {
+    #plusTodo, #plusPrb {
         background-color: limegreen;
     }
     
-    #minus {
+    #minusPrb {
         background-color: red;
     }
     /* Buttons */
