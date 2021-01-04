@@ -1,0 +1,35 @@
+
+#backDrop{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+    background-color: #11101075;
+}
+
+#confirmation{
+    position: fixed;
+    z-index: 70;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    background-color: #eee;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#confirmMatter{
+    margin-bottom: 20px;
+}
+
+.feature{
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: rgb(86, 165, 230);
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
