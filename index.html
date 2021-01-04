@@ -65,9 +65,12 @@
       </nav>
     </div>
 
+
     <div class ="typewriter">
       <p>Lost time is never found again.</p>
     </div>
+
+ 
 
 </section>
 <!-- Watches Container -->
@@ -131,7 +134,7 @@
 		<p class="todoHeading mx-auto">ToDo</p>
 		<hr>
 		<div id="todo_list"></div>
-		<button type="button" class="btn  btn-lg text-light mt-4" onclick="addTask()" id='plus'><i class="fa fa-plus"
+		<button type="button" class="btn  btn-lg text-light mt-4" onclick="addTask()" id='plusTodo'><i class="fa fa-plus"
 				aria-hidden="true"></i> Add</button>
 	</div>
 
@@ -139,16 +142,15 @@
 
 	<div id='prb_cntr'>
 
-		<button type="button" class="btn btn-danger btn-lg btn1" onclick="prb_minus()" id='minus'>1 <i class="fa fa-minus"
+<button type="button" class="btn btn-danger btn-lg btn1" onclick="prb_minus()" id='minus'>1 <i class="fa fa-minus"
 				aria-hidden="true"></i></button>
 		<button type="button" class="btn btn-success btn-lg btn1" onclick="prb_plus()" id='plus'>1 <i class="fa fa-plus"
 				aria-hidden="true"></i></button>
 		
-
-		<button type="button" class="btn btn-dark btn-lg btn1" onclick="rst()"> Reset <i class="fa fa-undo"
+		<button type="button" class="btn btn-dark btn-lg btn1" onclick="rst()" id='reset'> Reset <i class="fa fa-undo"
 				aria-hidden="true"></i></button>
-		<button type="button" id ='record' class="btn btn-lg mx-auto" onclick ="record()">Record <i class='fas fa-record-vinyl'></i></button>
-
+		<button type="button" id ='record' class="btn btn-lg mx-auto" onclick ="record()" id='record'> Record <i class='fas fa-record-vinyl'></i></button>
+		
 		<p id="prb_count">Problems Count: 0</p>
 		<p id="Average time">Average time/problem :0 mins</p>
 	</div>
