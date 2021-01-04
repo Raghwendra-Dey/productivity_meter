@@ -425,6 +425,18 @@ if(cnt>=0)
   if(pop_min.style.opacity!=0 ){
     clearInterval(intervalIDm);
     window.clearTimeout(IDm);
+    if (isrunningAverage) { 
+      T[2].prevtime=new Date().getTime();
+      dequeAvgTime.removeRear();
+      dequePrevTime.removeRear();
+      runningAverage = dequeAvgTime.items[dequeAvgTime.size()-1];
+      
+    }
+    if(pop_pls.style.display==="block"||pop_rst.style.display==="block")
+    {
+    pop_pls.style.display="none";
+    pop_rst.style.display="none";
+    }
     pop_min.style.opacity=1;
      //setting a timer to call the function for automatic fade off after 4sec when opacity was non-0
     IDm=window.setTimeout(fade_out_minus,4000);
@@ -475,31 +487,38 @@ updateAverage(cnt);
 }
 
 function record() {
-if (document.querySelector('#record').style.backgroundColor == "blue") {
-  document.querySelector('#record').style.backgroundColor = 'purple';    //Color introduced so user can realise that the timer is running
-  document.querySelector('#record').style.color = ' pink';
-}
-else{
-  document.querySelector('#record').style.backgroundColor = 'blue';    //Color introduced so user can realise that the timer is running
-  document.querySelector('#record').style.color = ' white';
-    }
-    
-if (!isrunningAverage) {        //Averagetime counter is turned on we update previous timestamp,along with the difference from previous session"
-  T[2].prevtime = new Date().getTime();
-  if (T[2].delta > 0) T[2].prevtime = T[2].prevtime - T[2].delta;
-  
-
-
-}
-else {        //Average time counter turned off 
-  T[2].delta = new Date().getTime() - T[2].prevtime;
-}
-isrunningAverage ^= true;    //switching the bool variable to indicate whether timer is running or not
+  if (document.querySelector('#record').style.backgroundColor == "salmon") {
+    document.querySelector('#record').style.backgroundColor = 'purple';    //Color introduced so user can realise that the timer is running
+    document.querySelector('#record').style.color = ' pink';
+    document.querySelector('#recordInfo').innerHTML = 'Record';
+  }
+  else{
+    document.querySelector('#record').style.backgroundColor = 'salmon';    //Color introduced so user can realise that the timer is running
+    document.querySelector('#record').style.color = ' white';
+    document.querySelector('#recordInfo').innerHTML = 'Pause';
+  }
+      
+  if (!isrunningAverage) {        //Averagetime counter is turned on we update previous timestamp,along with the difference from previous session"
+    T[2].prevtime = new Date().getTime();
+    if (T[2].delta > 0) T[2].prevtime = T[2].prevtime - T[2].delta;
+    document.querySelector("#plusPrb").style.display = "unset";
+    document.querySelector("#minusPrb").style.display = "unset";
+  }
+  else {        //Average time counter turned off 
+    T[2].delta = new Date().getTime() - T[2].prevtime;
+    document.querySelector("#plusPrb").style.display = "none";
+    document.querySelector("#minusPrb").style.display = "none";
+  }
+  isrunningAverage ^= true;    //switching the bool variable to indicate whether timer is running or not
 }
 
 function rst() {
   document.getElementById('record').style.color = "pink";
   document.getElementById('record').style.backgroundColor = "purple";
+
+  document.querySelector("#plusPrb").style.display = "none";
+  document.querySelector("#minusPrb").style.display = "none";
+  document.querySelector('#recordInfo').innerHTML = 'Record';
 
   document.getElementById('prb_count').innerHTML = "Problems Count: 0";
   document.getElementById('Average time').innerHTML = "Average time/problem: 0 mins";
@@ -719,3 +738,85 @@ function playSound() {
 const audio = new Audio("assets/beep.mp3");
 audio.play();
 }
+// Quotes code
+
+// Array shuffler
+
+function shuffleArray(array) {
+
+  for (var i = array.length - 1; i > 0; i--) {
+    // Generate random number  
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+let quotesArray = [
+  "You may delay, but time will not.",
+  "Lost time is never found again.",
+  "Until we can manage time, we can manage nothing else.",
+  "Productivity is always a result of intelligent planning.",
+  "Your mind is for having ideas, not holding them."
+];
+
+let index = 0;
+let quoteHolder = document.getElementById("typewriter");
+// for (let quote of quotesArray) {
+let quote = quotesArray[index];
+let len = qLength = quote.length;
+let timepass = stdTimePass = 40;
+
+let quoteWriter = setInterval(() => {
+  // len moves from length to 0 i.e. positions move from 0 to length
+  if (len >= 0) {
+    quoteHolder.innerHTML = quote.slice(0, qLength - len);
+    len--;
+  }
+  // len moves from - 1 to - length - 1 i.e. positions move from length to 0
+  else if (len >= - qLength - 1) {
+    if (timepass > 0) {
+      timepass--;
+    }
+    else {
+      quoteHolder.innerHTML = quote.slice(0, qLength + len + 1);
+      // For double speed
+      len -= 2;
+    }
+  }
+  else if (len < -qLength) {
+    // Flushing if any remaining
+    quoteHolder.innerHTML = quote.slice(0, 0)
+    // Halving the empty string timepass
+    if (timepass > -stdTimePass / 5) {
+      timepass--;
+    }
+    else {
+
+      if (index == quotesArray.length - 1) {
+        index = 0;
+        prevQuote = quote;
+
+        // Shuffles the quotes array
+        quotesArray = shuffleArray(quotesArray);
+
+        // Also this is ensured that while shuffling 
+        // the last quote in prev array doesn't come to first place
+        while (prevQuote == quotesArray[0]) {
+          quotesArray = shuffleArray(quotesArray);
+        }
+
+      } else {
+        index++;
+      }
+
+      quote = quotesArray[index];
+      len = qLength = quote.length;
+      timepass = stdTimePass;
+    }
+  }
+}, 80);
+  // This is observed to be better for each length string
+  // except for very big strings like 200 chrs

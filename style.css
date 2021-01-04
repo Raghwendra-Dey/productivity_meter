@@ -183,37 +183,31 @@ button {
 
 /* Typewriter */
 .typewriter {
-  border-right: solid 3px rgba(0,255,0,.75);
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  display: block;
   overflow: hidden;    
   font-family: 'Fredericka the Great', cursive;  
   font-size: 3rem;
   color: rgba(241, 198, 58, 0.7);
   margin: 2rem auto 3rem;
+  width: fit-content;
+  padding-right: 10px;
+  text-align: center;
+}
+
+#typewriter{
+  border-right: solid 3px rgba(0,255,0,.75);
 }
 
 /* Animation */
-.typewriter {
-  animation: animated-text 4s steps(30,end) 1s 1 normal both,
-             animated-cursor 600ms steps(30,end) infinite;
-}
-
-/* text animation */
-@keyframes animated-text{
-  from{width: 0;}
-  to{width: 40rem;}
+#typewriter {
+  animation: animated-cursor 600ms infinite;
 }
 
 /* cursor animations */
 @keyframes animated-cursor{
   from{border-right-color: rgba(0,255,0,.75);}
   to{border-right-color: transparent;}
-
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 }
 
 .timer{
@@ -500,11 +494,11 @@ body {
         display: none;
     }
     
-    #plus {
+    #plusTodo, #plusPrb {
         background-color: limegreen;
     }
     
-    #minus {
+    #minusPrb {
         background-color: red;
     }
     /* Buttons */
