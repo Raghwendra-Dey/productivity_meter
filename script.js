@@ -708,3 +708,86 @@ function save_click(){
   document.getElementById("confirmYes").addEventListener("click",save)
 
 }
+
+// Quotes code
+
+// Array shuffler
+
+function shuffleArray(array) {
+
+  for (var i = array.length - 1; i > 0; i--) {
+    // Generate random number  
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+let quotesArray = [
+  "You may delay, but time will not.",
+  "Lost time is never found again.",
+  "Until we can manage time, we can manage nothing else.",
+  "Productivity is always a result of intelligent planning.",
+  "Your mind is for having ideas, not holding them."
+];
+
+let index = 0;
+let quoteHolder = document.getElementById("typewriter");
+// for (let quote of quotesArray) {
+let quote = quotesArray[index];
+let len = qLength = quote.length;
+let timepass = stdTimePass = 40;
+
+let quoteWriter = setInterval(() => {
+  // len moves from length to 0 i.e. positions move from 0 to length
+  if (len >= 0) {
+    quoteHolder.innerHTML = quote.slice(0, qLength - len);
+    len--;
+  }
+  // len moves from - 1 to - length - 1 i.e. positions move from length to 0
+  else if (len >= - qLength - 1) {
+    if (timepass > 0) {
+      timepass--;
+    }
+    else {
+      quoteHolder.innerHTML = quote.slice(0, qLength + len + 1);
+      // For double speed
+      len -= 2;
+    }
+  }
+  else if (len < -qLength) {
+    // Flushing if any remaining
+    quoteHolder.innerHTML = quote.slice(0, 0)
+    // Halving the empty string timepass
+    if (timepass > -stdTimePass / 5) {
+      timepass--;
+    }
+    else {
+
+      if (index == quotesArray.length - 1) {
+        index = 0;
+        prevQuote = quote;
+
+        // Shuffles the quotes array
+        quotesArray = shuffleArray(quotesArray);
+
+        // Also this is ensured that while shuffling 
+        // the last quote in prev array doesn't come to first place
+        while (prevQuote == quotesArray[0]) {
+          quotesArray = shuffleArray(quotesArray);
+        }
+
+      } else {
+        index++;
+      }
+
+      quote = quotesArray[index];
+      len = qLength = quote.length;
+      timepass = stdTimePass;
+    }
+  }
+}, 80);
+  // This is observed to be better for each length string
+  // except for very big strings like 200 chrs
