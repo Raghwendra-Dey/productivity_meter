@@ -6,45 +6,57 @@ body {
   background-size: cover;
   width:100%;
 }
-#timer {
-  width: 500px;
-  font-size: 70px;
+
+.controls{
+    margin:20px;
+    text-align: center;
+   }
+
+.timer{
+  width:97% ;
+  font-size: 6vw;
   background-color: black;
   color: limegreen;
-  padding: 25px;
+  padding: 10px;
   border-radius: 10px;
 }
-#labels {
+
+.labels {
   margin-top: -25px;
   z-index: 2;
   color: limegreen;
-  font-size: 12px;
+  font-size: 1.1vw;
 }
 
-#hh {
-  margin-left: 45px;
+.savee{
+  font-size: 1.6vw;
+  margin:15px;
 }
-#mm {
-  margin-left: 80px;
+
+.hh {
+  margin-left: 5%;
 }
-#ss {
-  margin-left: 70px;
+.mm {
+  margin-left: 6vw;
 }
-#ms {
-  margin-left: 45px;
+.ss {
+  margin-left: 6vw;
+}
+.cs {
+  margin-left: 6vw;
 }
 
 
 /* Navigation Bar */
 .navbar {
-  padding: 0rem 3rem !important;
+  padding: 0rem 2vw !important;
 }
 
 .navbar-brand {
   display: inline-block;
   padding: 0;
   margin: 0;
-  font-size: 2rem !important;
+  font-size: 3vw !important;
 
 }
 
@@ -59,95 +71,114 @@ body {
 }
 
 .nav-icon{
-  font-size: 2rem;
-}
-
-#controls {
-  margin-left: 150px;
-  margin-top: 30px;
+  font-size: 2vw;
 }
 
 button {
-
   box-shadow: 5px 5px 5px #888888;
 }
 
 .watches {
   text-align: center;
 }
+
 .watch1 {
   text-align: left;
   display: inline-block;
-  width: 50%;
+  width: 48%;
 }
 
 .watch2 {
   text-align: left;
   display: inline-block;
-  width: 40%;
+  width: 48%;
 }
 
-.watch3 {
+.text{
+  color: #fff;
+  font-size: 4vw;
+}
+
+.watch3{
   text-align: left;
   display: inline-block;
-  width: 40%;
+  width: 48%;
 }
 
-.text {
-  color: #fff;
-  font-size: 25px;
-}
 
-.textbox
-{
+
+.textbox{
   font-size: 18px;
 }
 
-#go {
+#go{
   background-color: limegreen;
+  font-size:1.5vw;
+  margin:18px;
 }
 
-#stop {
+#stop{
   background-color: red;
   display: none;
+  font-size:1.5vw;
+  margin:18px;
 }
 
-#clear {
+#clear{
   background-color: yellow;
   display: none;
+   font-size:1.5vw;
+   margin:18px;
 }
 
-#plus {
+#plusPrb{
   background-color: limegreen;
+  font-size:1.5vw;
+  margin:9px;
 }
 
-#minus {
+#minusPrb{
   background-color: red;
+  font-size:1.5vw;
+  margin:9px;
+}
+
+
+#reset{
+font-size:1.5vw;
+  margin:9px;
+}
+
+#record{
+font-size:1.4vw;
+  margin:9px;
 }
 
 #todo_container {
-  width: 820px;
+  width: 70%;
   height: 400px;
-  font-size: 40px;
+  font-size: 3vw;
   overflow-y: auto;
   background-color: black;
   color: limegreen;
   padding: 25px;
   border-radius: 10px;
   margin-top: 50px;
-  margin-left: 200px;
+  margin-left: 15%;
   padding-top: 5px;
 }
 
-#prb_cntr {
-  width: 420px;
-  font-size: 40px;
+
+#prb_cntr{
+  text-align: center;
+  width: 50%;
+  font-size: 3vw;
   background-color: black;
   color: limegreen;
   padding: 25px;
   border-radius: 10px;
   margin-top: 50px;
-  margin-left: 400px;
+  margin-left: 25%;
   padding-top: 50px;
 }
 
@@ -156,10 +187,7 @@ button {
   margin-left: 12px;
 }
 
-body,
-button {
-  font-family: "Courier";
-}
+
 
 #footer {
   text-align: center;
@@ -182,6 +210,7 @@ button {
 }
 
 /* Typewriter */
+
 .typewriter {
   /* white-space: nowrap; */
   display: block;
@@ -191,6 +220,7 @@ button {
   color: rgba(241, 198, 58, 0.7);
   margin: 2rem auto 3rem;
   width: fit-content;
+
   padding-right: 10px;
   text-align: center;
 }
@@ -204,106 +234,31 @@ button {
   animation: animated-cursor 600ms infinite;
 }
 
+/* text animation */
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 40rem;}
+}
+
 /* cursor animations */
 @keyframes animated-cursor{
   from{border-right-color: rgba(0,255,0,.75);}
   to{border-right-color: transparent;}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 }
 
-.timer{
-  width: 500px;
-  font-size: 70px;
-  background-color: black;
-  color: limegreen;
-  padding: 25px;
-  border-radius: 10px;
-}
 
-.labels {
-  margin-top: -25px;
-  z-index: 2;
-  color: limegreen;
-  font-size: 12px;
-}
 
-.hh {
-  margin-left: 45px;
-}
 
-.mm {
-  margin-left: 80px;
-}
 
-.ss {
-  margin-left: 70px;
-}
 
-.cs {
-  margin-left: 45px;
-}
 
-.controls {
-  margin-left: 150px;
-  margin-top: 30px;
-}
 
-button {
-  box-shadow: 5px 5px 5px #888888;
-}
-
-.watches {
-  text-align: center;
-}
-
-.watch1 {
-  text-align: left;
-  display: inline-block;
-  width: 50%;
-}
-
-.watch2 {
-  text-align: left;
-  display: inline-block;
-  width: 40%;
-}
-
-.watch3 {
-  text-align: left;
-  display: inline-block;
-  width: 40%;
-}
-
-.text {
-  color: #fff;
-  font-size: 25px;
-}
-
-.textbox
-{
-  font-size: 18px;
-}
-
-#go {
-  background-color: limegreen;
-}
-
-#stop {
-  background-color: red;
-  display: none;
-}
-
-#clear {
-  background-color: yellow;
-  display: none;
-}
-
-#plus {
-  background-color: limegreen;
-}
-
-#minus {
-  background-color: red;
-}
 
 /* Buttons */
 .btn1,  .input{
@@ -323,16 +278,6 @@ button {
 
 /* Todo List */
 
-#todo_container {
-  width: 820px;
-  height: 400px;
-  font-size: 40px;
-  background-color: black;
-  color: limegreen;
-  padding: 10px 25px;
-  border-radius: 10px;
-  margin: 50px auto;
-}
 
 #todo_list{
   height: 200px;
@@ -380,152 +325,18 @@ button {
   margin-right: 1%;
 }
 
-#prb_cntr {
-  width: 600px; 
-  font-size: 40px;
-  background-color: black;
-  color: limegreen;
-  padding: 50px 20px ;
-  border-radius: 10px;
-  margin: 50px auto;
-  text-align: center;
-}
 
-#prb_count {
-  /* text-align: center; */
-  margin-top: 75px;
-  margin-left: 12px;
-}
 
 body,
 button {
   font-family: "Courier";
 }
 
-body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    .timer {
-        width: 500px;
-        font-size: 70px;
-        background-color: black;
-        color: limegreen;
-        padding: 25px;
-        border-radius: 10px;
-    }
-    
-    .labels {
-        margin-top: -25px;
-        z-index: 2;
-        color: limegreen;
-        font-size: 12px;
-    }
-    
-    .hh {
-        margin-left: 45px;
-    }
-    
-    .mm {
-        margin-left: 80px;
-    }
-    
-    .ss {
-        margin-left: 70px;
-    }
-    
-    .cs {
-        margin-left: 45px;
-    }
-    
-    .controls {
-        margin-left: 150px;
-        margin-top: 30px;
-    }
-    
-    button {
-        box-shadow: 5px 5px 5px #888888;
-    }
-    
-    .watches {
-        text-align: center;
-    }
-    
-    .watch1 {
-        text-align: left;
-        display: inline-block;
-        width: 50%;
-    }
-    
-    .watch2 {
-        text-align: left;
-        display: inline-block;
-        width: 40%;
-    }
-    
-    .watch3 {
-        text-align: left;
-        display: inline-block;
-        width: 40%;
-    }
-    
-    .text {
-        color: #fff;
-        font-size: 3rem;
-    }
-    
-    .textbox {
-        font-size: 18px;
-    }
-    
-    #go {
-        background-color: limegreen;
-    }
-    
-    #stop {
-        background-color: red;
-        display: none;
-    }
-    
-    #clear {
-        background-color: yellow;
-        display: none;
-    }
-    
-    #plusTodo, #plusPrb {
-        background-color: limegreen;
-    }
-    
-    #minusPrb {
-        background-color: red;
-    }
-    /* Buttons */
-    
-    button,
-    .input {
-        transform: scale(0.9);
-    }
-    
-    button:hover,
-    .input {
-        transform: scale(1);
-        opacity: 0.8;
-    }
 
+    
+   
     /* Todo List */
-    #todo_container {
-        width: 820px;
-        height: 410px;
-        font-size: 40px;
-        background-color: black;
-        color: limegreen;
-        padding: 10px 25px;
-        border-radius: 10px;
-        margin: 50px auto;
-        font-size: 0;
-    }
+    
     
     #todo_list {
         height: 200px;
@@ -544,3 +355,153 @@ body {
 #footer a:hover {
   color: pink;
 }
+
+@media (max-width: 541px){
+   .typewriter{
+    font-size: 4vw;
+   }
+
+   .watch1{
+    width:70%;
+   }
+
+   .watch2{
+    width:70%;
+   }
+
+   .watch3{
+    width:70%;
+   }
+
+   .timer{
+    font-size: 8vw;
+    text-align: center;
+   }
+
+   .text{
+    text-align: center;
+   }
+
+   #go{
+    
+    font-size: 3vw;
+   }
+
+   #stop{
+    font-size: 3vw;
+   }
+
+   #clear{
+    font-size: 3vw;
+   }
+   
+   #plusPrb{
+    font-size: 3vw;
+   }
+
+   #minusPrb{
+    font-size: 3vw;
+   }
+
+   #reset{
+    font-size: 3vw;
+   }
+
+   #record{
+    font-size: 2.9vw;
+   }
+
+   .savee{
+  font-size: 3.1vw;
+  margin: 15px;
+   }
+
+   .controls{
+    margin:20px;
+    text-align: center;
+   }
+
+   .navbar-brand{
+    font-size: 5vw !important;
+   }
+
+   .labels{
+    font-size: 2vw;
+   }
+
+   .hh{
+    margin-left: 11.9%;
+   }
+
+   .mm {
+  margin-left: 4vw;
+}
+.ss {
+  margin-left: 4vw;
+}
+.cs {
+  margin-left: 4vw;
+}
+
+
+}
+
+@media (min-width: 542px) and (max-width: 971px) {
+   
+   .typewriter{
+    font-size: 4vw;
+   }
+
+   .labels{
+    font-size: 1.5vw;
+   }
+    
+  .hh{
+    margin-left: 5%;
+  }
+
+.mm {
+  margin-left: 4vw;
+}
+.ss {
+  margin-left: 4vw;
+}
+.cs {
+  margin-left: 4vw;
+}
+
+#go{
+    
+    font-size: 2.2vw;
+   }
+
+   #stop{
+    font-size: 2.2vw;
+   }
+
+   #clear{
+    font-size: 2.2vw;
+   }
+   
+   #plusPrb{
+    font-size: 2.2vw;
+   }
+
+   #minusPrb{
+    font-size: 2.2vw;
+   }
+
+   #reset{
+    font-size: 2.2vw;
+   }
+
+   #record{
+    font-size: 2.2vw;
+   }
+
+.savee{
+  margin:15px;
+  font-size: 2.2vw;
+   }
+
+  }

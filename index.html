@@ -135,7 +135,7 @@
 	<div id='prb_cntr'>
 		
 		<button type="button" id ='record' class="btn btn-lg mx-auto" onclick ="record()"><span id="recordInfo">Record</span> <i class='fas fa-record-vinyl'></i></button>
-		<button type="button" class="btn btn-dark btn-lg btn1" onclick="rst()"> Reset <i class="fa fa-undo"
+		<button type="button" id='reset' class="btn btn-dark btn-lg btn1" onclick="rst()"> Reset <i class="fa fa-undo"
 				aria-hidden="true"></i></button><br/>
 		<button type="button" class="btn btn-danger btn-lg btn1" onclick="prb_minus()" id='minusPrb'style="display: none;" >1 <i class="fa fa-minus"
 				aria-hidden="true"></i></button>
@@ -147,13 +147,13 @@
 
 	<!-- Saving records Container -->
 	<div class="text-center">
-		<button type="button" class="btn btn-success btn-lg" onclick="save_click()"> Save and Reset All </button>
+		<button type="button" class="btn btn-success btn-lg savee" onclick="save_click()"> Save and Reset All </button>
 	</div>
 
 	<div class='active' id="plus_modal">
 			<span class="cross1" onclick="vanish_plus()" ><i class="far fa-times-circle"></i></span>
 			<span class="icon-up"><i class="far fa-thumbs-up"></i></span>
-			<span class ="txt">Well done!</br> Keep it up</span>
+			<span class ="txt">Well done!</br> Keep it up! </span>
 		    </br>
 		    <span class="txt1" >Let's go for another problem.</span>
 
@@ -172,7 +172,7 @@
 	<div id="pop_rst">
 	    	<span class="run"><i class="fas fa-running"></i></span>
 	    	<span class="cross4" onclick="vanish_rst()"><i class="far fa-times-circle"></i></span></br>
-	    	<span class="txt5" >Let's began!</span>
+	    	<span class="txt5" >Let's begin!</span>
             
 	</div>
 </section>
