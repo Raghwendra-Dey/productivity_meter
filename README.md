@@ -5,8 +5,9 @@ This is used for tracking how much time you are thinking you spend in problem so
 This does so by measuring the delta between the time spent minus the time wasted due to small small distractions. It uses two timers to do so.</br>
 Use it [here](https://raghwendra-dey.github.io/productivity_meter/).<br>
 ## App in Action:
-![App in Action](https://user-images.githubusercontent.com/60804824/102696331-8ff74d80-4253-11eb-84e4-add89e4f29f3.jpeg)
-![ll](https://user-images.githubusercontent.com/60804824/102696346-a7ced180-4253-11eb-98fc-b3c4fb0d9ca4.jpeg)
+![App in Action pic1](https://user-images.githubusercontent.com/45457947/106281001-a4703200-6264-11eb-91f3-2783c7773381.png)
+![App in Action pic2](https://user-images.githubusercontent.com/45457947/106281091-c49ff100-6264-11eb-8c3c-9674b1f441e0.png)
+![App in Action pic3](https://user-images.githubusercontent.com/45457947/106281177-ded9cf00-6264-11eb-8fd8-c93eb07ff1cf.png)
 
 ## Usage:
 > This App helped me a lot in my studies to keep track of my time wastage and making me aware of the real scenario of actual time utilization.<br>
